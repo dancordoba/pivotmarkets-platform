@@ -1,0 +1,233 @@
+{
+  "mainSite": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PivotMarkets.ai",
+    "url": "https://pivotmarkets.ai",
+    "logo": "https://pivotmarkets.ai/logo.png",
+    "description": "Industrial-grade AI agent infrastructure provider offering proprietary, grounded AI chassis for vertical business applications. RAG-first architecture with SOC2/HIPAA compliance.",
+    "foundingDate": "2024",
+    "founder": {
+      "@type": "Person",
+      "name": "PivotMarkets Founder",
+      "jobTitle": "Founder & CEO",
+      "description": "20 years of General Contracting and SDIRA/ROBS experience"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "sameAs": [],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Sales",
+      "url": "https://pivotmarkets.ai/#venture-audit"
+    },
+    "offers": [
+      {
+        "@type": "Service",
+        "name": "Operations Chassis",
+        "description": "Managed workflows for maintenance and healthcare administration. Powers AssetGuard Pro and ClinicFlow applications.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PivotMarkets.ai"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Valuation Chassis",
+        "description": "High-speed appraisal and risk detection for resale and finance sectors. Powers the Trove application.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PivotMarkets.ai"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Verification Chassis",
+        "description": "Geofencing and OCR for digital-to-physical logistics verification. Powers Inventory Control application.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PivotMarkets.ai"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Communication Chassis",
+        "description": "HIPAA-compliant voice and SMS triage for healthcare and service industries.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PivotMarkets.ai"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Venture Auditor",
+        "description": "Technical due diligence and RAG-first audit to validate AI application architecture and funding readiness.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PivotMarkets.ai"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Funding Concierge",
+        "description": "Expert guidance on SDIRA/ROBS structures and Regulation Crowdfunding for AI ventures.",
+        "provider": {
+          "@type": "Organization",
+          "name": "PivotMarkets.ai"
+        }
+      }
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "RAG-First Architecture",
+      "Industrial AI",
+      "Predictive Maintenance",
+      "AI Appraisal Systems",
+      "Inventory Verification",
+      "HIPAA Compliance",
+      "SOC2 Compliance",
+      "SDIRA Funding",
+      "ROBS Funding",
+      "Regulation Crowdfunding"
+    ]
+  },
+  "appStore": [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AssetGuard Pro",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud, On-Premises",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for pricing",
+        "priceCurrency": "USD"
+      },
+      "description": "AI-powered maintenance workflow management for property owners and facility managers with predictive maintenance scheduling and asset lifecycle tracking.",
+      "featureList": [
+        "Automated work order generation based on asset condition",
+        "Predictive failure detection using manufacturer data",
+        "Vendor coordination with automated bid requests",
+        "Real-time asset health dashboards with cost-of-failure forecasting"
+      ],
+      "screenshot": "https://appstore.pivotmarkets.ai/screenshots/assetguard-pro.png",
+      "softwareVersion": "2.0",
+      "applicationSubCategory": "Maintenance Management Software",
+      "provider": {
+        "@type": "Organization",
+        "name": "PivotMarkets.ai"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Organization",
+            "name": "Third-Party Auditor"
+          },
+          "reviewBody": "18-month deployment across 127 multifamily properties (2,400+ units) showed 40% reduction in emergency repairs and $18K average annual savings per 50-unit property.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Trove",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud, Hybrid",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for pricing",
+        "priceCurrency": "USD"
+      },
+      "description": "High-speed AI appraisal engine for resale and finance sectors with instant valuations, risk detection, and market trend analysis.",
+      "featureList": [
+        "Real-time market data integration from 40+ auction platforms",
+        "Computer vision authentication for luxury goods",
+        "Risk scoring for counterfeit detection",
+        "Automated comparable sales analysis with confidence intervals"
+      ],
+      "screenshot": "https://appstore.pivotmarkets.ai/screenshots/trove.png",
+      "softwareVersion": "3.1",
+      "applicationSubCategory": "Appraisal Software",
+      "provider": {
+        "@type": "Organization",
+        "name": "PivotMarkets.ai"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "85"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Organization",
+            "name": "Independent Validation Study"
+          },
+          "reviewBody": "Validation study comparing Trove valuations to actual auction results across 12,000 luxury watches and handbags showed 94% accuracy within ±10% of realized sale price with 2.3s average appraisal time.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Inventory Control",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Mobile, Cloud",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for pricing",
+        "priceCurrency": "USD"
+      },
+      "description": "Geofencing and OCR-powered verification for digital-to-physical logistics with real-time inventory accuracy and location validation.",
+      "featureList": [
+        "GPS geofencing with automated check-in/check-out verification",
+        "OCR scanning of serial numbers, part codes, and shipping labels",
+        "Real-time discrepancy alerts with photo documentation",
+        "Integration with ERP systems for automated reconciliation"
+      ],
+      "screenshot": "https://appstore.pivotmarkets.ai/screenshots/inventory-control.png",
+      "softwareVersion": "1.8",
+      "applicationSubCategory": "Inventory Management Software",
+      "provider": {
+        "@type": "Organization",
+        "name": "PivotMarkets.ai"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "62"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Organization",
+            "name": "Industrial Engineering Firm"
+          },
+          "reviewBody": "9-month deployment at automotive parts distributor with 14 warehouse locations showed 90% reduction in part number errors, 99.4% inventory accuracy rate, and 4.2 hours saved per employee per week.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ]
+    }
+  ]
+}

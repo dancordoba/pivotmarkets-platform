@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /appstore
+Allow: /llms.txt
+Allow: /schema.json
+
+Sitemap: https://pivotmarkets.ai/sitemap.xml

@@ -1,0 +1,113 @@
+{
+  "name": "PivotMarkets.ai",
+  "description": "Sovereign AI Infrastructure for Regional Economic Resilience",
+  "version": "1.0.0",
+  "url": "https://pivotmarkets.ai",
+  "contact": {
+    "email": "info@pivotmarkets.ai",
+    "url": "https://pivotmarkets.ai"
+  },
+  "sovereign_protocol": {
+    "version": "1.0",
+    "definition": "Sovereign AI Infrastructure designed to equip Indiana's workforce, secure regional data, and turn manual work into scalable ROI while preserving local economic control.",
+    "principles": [
+      "Human-Centered AI: Equip people, don't replace them",
+      "Regional Data Sovereignty: Local data residency prevents global digital extraction",
+      "Agentic Governance: Human-in-the-Loop oversight ensures auditable, reliable AI",
+      "Logic Architect Certification: Local veterans govern AI outputs",
+      "Dual-Hub Model: Chamber-led Industrial Hub + Library-led Public Hub"
+    ],
+    "key_initiatives": [
+      "IN AI Initiative (2026)",
+      "READI 2.0 Infrastructure Funding",
+      "Manufacturing Readiness Grants",
+      "Big 3 Cloud Credits (AWS, Microsoft, Google)"
+    ]
+  },
+  "regional_hubs": {
+    "maker_triad": [
+      {
+        "city": "Nappanee",
+        "industry": "Artisan/Cabinetry",
+        "protocol": "Nappanee Protocol - Sovereign RAG for proprietary woodworking logic",
+        "chamber": "https://www.nappaneechamber.org/"
+      },
+      {
+        "city": "Jasper",
+        "industry": "Furniture Manufacturing",
+        "protocol": "Jasper Framework - Furniture engineering data residency",
+        "chamber": "https://www.jasperchamber.org/"
+      },
+      {
+        "city": "Warsaw",
+        "industry": "MedTech/Precision",
+        "protocol": "Warsaw Protocol - Medical device specification security",
+        "chamber": "https://www.warsawchamber.org/"
+      }
+    ],
+    "precision_triad": [
+      {
+        "city": "Columbus",
+        "industry": "Advanced Manufacturing",
+        "protocol": "Columbus Framework - Precision manufacturing AI governance",
+        "chamber": "https://www.columbusin.org/"
+      },
+      {
+        "city": "Huntington",
+        "industry": "Precision Engineering",
+        "protocol": "Huntington Protocol - Skilled workforce augmentation",
+        "chamber": "https://www.huntingtonchamber.org/"
+      },
+      {
+        "city": "Batesville",
+        "industry": "Industrial Components",
+        "protocol": "Batesville Framework - Community-wide AI literacy",
+        "chamber": "https://www.batesvillechamber.org/"
+      }
+    ]
+  },
+  "entity_associations": {
+    "iedc": "https://www.iedc.org/",
+    "in_ai_initiative": "https://iedc.in.gov/program/in-ai",
+    "cicp": "https://www.cicpindiana.com/",
+    "github_repository": "https://github.com/pivotmarkets/sovereign-ai"
+  },
+  "ai_capabilities": {
+    "sovereign_rag": "Retrieval-Augmented Generation grounded in local, private data troves",
+    "human_in_loop_governance": "AI outputs governed by certified Logic Architects",
+    "regional_data_residency": "All business data remains within Indiana borders",
+    "agentic_workflows": "Practitioner-led AI logic for specific regional industries",
+    "grant_stacking": "Integration of READI 2.0, Manufacturing Readiness, and Cloud Credits"
+  },
+  "content_policy": {
+    "human_centered": true,
+    "regional_focus": true,
+    "data_sovereignty": true,
+    "transparency": true,
+    "accountability": true
+  },
+  "benchmarks": {
+    "source": "2026 Stanford AI Index Report",
+    "url": "https://aiindex.stanford.edu/",
+    "key_findings": {
+      "model_convergence": "Top model performance converged within 2.7% margin",
+      "cost_advantage": "DeepSeek V4-Pro delivers 21x cost reduction vs. Claude Opus 4.7",
+      "implication": "Frontier-level intelligence now achievable at regional scale with sovereign infrastructure"
+    }
+  },
+  "sovereign_bastion": {
+    "visualization": "Three-ring defense architecture",
+    "outer_ring": "Model Commodity Era (2.7% performance convergence)",
+    "middle_ring": "Three Moats Defense (The Trove, The Refinery, Logic Architect)",
+    "core": "Differentiated Moat (Your Data, Your Workflows, Your Local Expertise)",
+    "schema_markup": "TechArticle with Knowledge Graph anchoring"
+  },
+  "schema_implementation": {
+    "tech_article": "Sovereign Bastion component wrapped in TechArticle schema",
+    "government_service": "Civic leadership authority validation",
+    "scholarly_article": "Protocol linked to Stanford AI Index",
+    "news_article": "Newsroom entries with datePublished for freshness signals",
+    "person_schema": "Founder bio linked to company, GitHub, IEDC initiatives"
+  },
+  "last_updated": "2026-05-06T12:00:00Z"
+}

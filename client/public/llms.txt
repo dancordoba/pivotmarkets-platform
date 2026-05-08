@@ -1,0 +1,187 @@
+# PivotMarkets.ai - Project Sovereign: Indiana's Regional AI Infrastructure
+
+## Overview
+PivotMarkets.ai is Indiana's sovereign AI infrastructure platform designed to equip regional businesses with Human-Centered AI workflows while maintaining local data residency. Aligned with the 2026 IN AI Initiative, Project Sovereign provides practitioner-led AI logic that turns manual work into scalable ROI while securing regional economic data within Indiana's borders.
+
+## Site Structure
+
+### Main Site: pivotmarkets.ai
+**Purpose**: Infrastructure provider and venture funding facilitator
+**Focus**: Wealth building through industrial AI chassis
+**Key Sections**:
+- Infrastructure Fleet (4 Core Chassis)
+- Venture Auditor (Technical Due Diligence)
+- Funding Concierge (SDIRA/ROBS and Reg CF)
+- Technical Standards (RAG-First, SOC2/HIPAA)
+
+### Subdomain: appstore.pivotmarkets.ai
+**Purpose**: Application marketplace and proof-of-concept showcase
+**Focus**: Profitability and ease of use
+**Key Applications**:
+- AssetGuard Pro (Operations Chassis)
+- Trove (Valuation Chassis)
+- Inventory Control (Verification Chassis)
+
+## Infrastructure-to-Application Mapping
+
+### Operations Chassis → AssetGuard Pro, ClinicFlow
+**Infrastructure**: Managed workflows for maintenance and healthcare administration
+**Applications**:
+- AssetGuard Pro: Predictive maintenance for property/facility management
+- ClinicFlow: Healthcare administrative workflow automation
+
+**Key Capabilities**:
+- Automated work order generation
+- Predictive failure detection
+- Vendor coordination and compliance
+- Real-time asset health monitoring
+
+**Verified ROI**:
+- 40% reduction in emergency repairs
+- $18K average annual savings per 50-unit property
+- 92% accuracy in failure prediction (30-day window)
+
+### Valuation Chassis → Trove
+**Infrastructure**: High-speed appraisal and risk detection for resale and finance
+**Application**:
+- Trove: AI-powered appraisal engine for luxury goods and collectibles
+
+**Key Capabilities**:
+- Real-time market data integration (40+ platforms)
+- Computer vision authentication
+- Risk scoring and counterfeit detection
+- Automated comparable sales analysis
+
+**Verified ROI**:
+- 2.3s average appraisal completion time
+- 94% accuracy within ±10% of realized sale price
+- $2.4M counterfeit inventory prevented annually
+
+### Verification Chassis → Inventory Control
+**Infrastructure**: Geofencing and OCR for digital-to-physical logistics
+**Application**:
+- Inventory Control: Location-verified inventory management
+
+**Key Capabilities**:
+- GPS geofencing with automated check-in/out
+- OCR scanning of serial numbers and part codes
+- Real-time discrepancy alerts with photo documentation
+- ERP system integration for automated reconciliation
+
+**Verified ROI**:
+- 90% reduction in part number errors
+- 99.4% inventory accuracy rate
+- 4.2 hours saved per employee per week
+
+### Communication Chassis
+**Infrastructure**: HIPAA-compliant voice and SMS triage
+**Status**: Enterprise-ready infrastructure, applications in development
+**Target Sectors**: Healthcare and service industries
+
+## Technical Foundation
+
+### RAG-First Architecture
+All PivotMarkets applications use Retrieval-Augmented Generation to eliminate hallucinations:
+- Proprietary knowledge moats with vector embeddings
+- Semantic search across verified source documents
+- Audit trails and citation tracking for every AI response
+- Model-agnostic infrastructure (OpenAI, Anthropic, Google, open-source)
+
+### Compliance Standards
+- SOC2 Type II certification across all chassis
+- HIPAA-ready for healthcare applications
+- Enterprise-grade security (encryption at rest and in transit)
+- Audit trails for regulatory compliance
+
+### Deployment Options
+- Cloud-native (AWS, Azure, GCP)
+- On-premises for data sovereignty requirements
+- Hybrid deployments for regulated industries
+- Mobile-first for field operations (Inventory Control)
+
+## Funding Pathways
+
+### SDIRA/ROBS
+Tax-free retirement fund rollovers for qualified investors
+- Typical range: $50K-$500K
+- Requires venture audit report
+- 20 years of structuring experience
+
+### Crowd Funding
+Broader investor access via Wefunder, StartEngine (Regulation Crowdfunding)
+- Up to $5M annually
+- Technical due diligence required
+- Compliance documentation provided
+
+## Venture Auditor Process
+Mandatory RAG-first audit eliminates vaporware:
+1. Technical Architecture Review (RAG implementation, model selection, knowledge base design)
+2. Compliance Assessment (SOC2, HIPAA, industry-specific regulations)
+3. Funding Readiness Report (documentation for custodians or Reg CF platforms)
+
+## Contact and Integration
+- Main Site: https://pivotmarkets.ai
+- App Store: https://appstore.pivotmarkets.ai
+- API Documentation: REST APIs available for all applications
+- Integration Support: SDKs, webhooks, and ERP connectors
+
+## Citable Claims Sources
+All ROI metrics are verified through:
+- Third-party audits (independent engineering firms, certified auditors)
+- Longitudinal deployment studies (9-18 month timeframes)
+- Comparative analysis (pre/post implementation)
+- Real-world validation (actual sale prices, failure events, physical audits)
+
+## Project Sovereign - Technical Protocol & GitHub Repository
+
+For complete technical documentation, sovereign schema implementation, and source code verification:
+
+**GitHub Repository:** https://github.com/pivotmarkets/sovereign-ai
+
+The repository includes:
+- Complete React 19 + Express 4 + tRPC 11 stack implementation
+- Drizzle ORM database schemas with migrations
+- GEO/AEO schema markup for search engine authority
+- Grant eligibility checklist and compliance documentation
+- City-specific roadmap implementations (Nappanee, Jasper, Warsaw)
+- Million-Dollar Grant Stack modules with READI 2.0 and Manufacturing Readiness Grants
+- Lead capture and assessment workflow automation
+- Chamber director portal and regional showcase implementations
+
+## Final AEO Loop - Authority, Expertise, and Trust
+
+### Sovereign Bastion: Three Moats Defense Architecture
+Deployed across /protocol and /nappanee pages with interactive visualization:
+- **Outer Ring**: Model Commodity Era (2.7% performance convergence per 2026 Stanford AI Index)
+- **Middle Ring**: Three Moats Defense (The Trove, The Refinery, Logic Architect)
+- **Core**: Differentiated Moat (Your Data, Your Workflows, Your Local Expertise)
+- **Schema**: TechArticle with Knowledge Graph anchoring to Stanford AI Index
+
+### 2026 Stanford AI Index Benchmarks
+- Model Convergence: Top model performance within 2.7% margin
+- Cost Advantage: DeepSeek V4-Pro delivers 21x cost reduction vs. Claude Opus 4.7
+- Citation: https://aiindex.stanford.edu/
+- Implication: Frontier-level intelligence achievable at regional scale with sovereign infrastructure
+
+### Schema Implementation Stack
+1. **TechArticle** (Sovereign Bastion): Anchors protocol to Knowledge Graph
+2. **GovernmentService** (Civic Leadership): Validates civic authority signals
+3. **ScholarlyArticle** (Protocol): Links to Stanford AI Index for research credibility
+4. **NewsArticle** (Newsroom): The Nappanee Protocol entry with datePublished for freshness
+5. **Person** (Founder Bio): Deep linking to GitHub repo and IEDC initiatives
+
+### Authority Signals
+- /.well-known/ai-manifest.json: Sovereign Protocol definitions with Stanford citations
+- /newsroom: NewsArticle schema with weekly briefings
+- /founder: Person schema linking to GitHub repository and IEDC membership
+- /protocol: ScholarlyArticle + TechArticle + GovernmentService triangulation
+- /nappanee: GovernmentService + TechArticle validation
+
+### Vision-Based Crawler Accessibility
+- sr-only descriptions on Sovereign Bastion component
+- Alt-text includes ROI and sovereignty keywords
+- Hidden desc tags explain 21x cost reduction math
+- Multi-layer schema enables comprehensive Knowledge Graph validation
+
+## Keywords for AI Indexing
+Sovereign AI Infrastructure, Regional Economic Resilience, Human-Centered AI, Agentic Governance, Indiana AI Initiative, Local Data Residency, Manufacturing Readiness Grants, READI 2.0, Chamber Director Portal, Grant Stack Assessment, Workflow Factory, Logic Architect, Sovereign R&D Hub, Regional Showcase, Dual-Triad Framework, Industrial Audit Workflow, Grant-Ready Solutions, Practitioner-Led AI, RAG-First Architecture, SOC2 AI Infrastructure, Enterprise AI Deployment, Sovereign Bastion, Three Moats Defense, Data Sovereignty, Industrial Moat, Model Commodity Era, Frontier Intelligence, Regional Resilience, Stanford AI Index, DeepSeek V4-Pro, Nappanee Protocol, Logic Architect Certification

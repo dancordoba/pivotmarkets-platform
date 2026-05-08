@@ -1,0 +1,2 @@
+ALTER TABLE `grantLeads` MODIFY COLUMN `city` enum('nappanee','jasper','warsaw','columbus','huntington','batesville','regional-partners') NOT NULL;--> statement-breakpoint
+ALTER TABLE `grantLeads` MODIFY COLUMN `industry` enum('artisan','furniture','medical','precision','manufacturing','consulting') NOT NULL;
