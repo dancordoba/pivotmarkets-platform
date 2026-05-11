@@ -6,6 +6,7 @@ import { sendContactNotification, sendAutoReply, sendAdminNotification, sendAdmi
 import { createPayment, getAvailableCurrencies, getPaymentStatus, estimatePrice } from "./crypto";
 import { createContactSubmission, getContactSubmissions, updateContactSubmissionStatus, createGrantLead, getGrantLeadsByCity } from "./db";
 import { z } from "zod";
+import { scoreGrantMatches, applicantStages, complianceCapacities, grantCities, grantIndustries } from "../shared/grantScoring";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -61,6 +62,19 @@ export const appRouter = router({
   }),
 
   leads: router({
+    score: publicProcedure
+      .input(
+        z.object({
+          city: z.enum(grantCities),
+          industry: z.enum(grantIndustries),
+          stage: z.enum(applicantStages),
+          complianceCapacity: z.enum(complianceCapacities),
+          hasCustomerValidation: z.boolean(),
+          needsCloudInfrastructure: z.boolean(),
+          fundingGoal: z.number().positive().max(10000000),
+        })
+      )
+      .query(({ input }) => scoreGrantMatches(input)),
     capture: publicProcedure
       .input(
         z.object({

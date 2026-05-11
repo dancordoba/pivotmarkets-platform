@@ -16,6 +16,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { GlossaryBubble } from "@/components/GlossaryBubble";
 import { ChatWidget } from "@/components/ChatWidget";
+import { MatchedGrantScorer } from "@/components/MatchedGrantScorer";
 
 interface Incubator {
   name: string;
@@ -347,6 +348,8 @@ export default function FundingGateway() {
         </div>
       </section>
 
+      <MatchedGrantScorer />
+
       {/* Section 3: Incubator Directory */}
       <section className="py-20">
         <div className="container max-w-6xl mx-auto px-4">
@@ -508,7 +511,7 @@ export default function FundingGateway() {
       </section>
 
       {/* Section 5: Partner with Us */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section id="partner-with-us" className="py-20 bg-blue-900 text-white">
         <div className="container max-w-6xl mx-auto px-4">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold mb-6">Partner with PivotMarkets</h2>
