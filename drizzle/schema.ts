@@ -38,6 +38,38 @@ export const contactSubmissions = mysqlTable("contactSubmissions", {
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 export type InsertContactSubmission = typeof contactSubmissions.$inferInsert;
 
+export const intakeRecords = mysqlTable("intakeRecords", {
+  id: int("id").autoincrement().primaryKey(),
+  contactName: varchar("contactName", { length: 255 }),
+  contactEmail: varchar("contactEmail", { length: 320 }),
+  orgName: varchar("orgName", { length: 255 }),
+  orgLocation: varchar("orgLocation", { length: 255 }),
+  entityType: varchar("entityType", { length: 120 }),
+  projectGoal: text("projectGoal"),
+  consentToContact: boolean("consentToContact").default(false).notNull(),
+  fullPayload: text("fullPayload").notNull(),
+  responseState: mysqlEnum("responseState", ["accepted", "queued", "needs_more_information", "duplicate_or_existing_record", "rejected_invalid_payload", "error"]).default("queued").notNull(),
+  grantMatchFlagged: boolean("grantMatchFlagged").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type IntakeRecord = typeof intakeRecords.$inferSelect;
+export type InsertIntakeRecord = typeof intakeRecords.$inferInsert;
+
+export const staffNotes = mysqlTable("staffNotes", {
+  id: int("id").autoincrement().primaryKey(),
+  intakeRecordId: int("intakeRecordId").notNull(),
+  staffUserId: int("staffUserId").notNull(),
+  previousState: mysqlEnum("previousState", ["accepted", "queued", "needs_more_information", "duplicate_or_existing_record", "rejected_invalid_payload", "error"]).notNull(),
+  newState: mysqlEnum("newState", ["accepted", "queued", "needs_more_information", "duplicate_or_existing_record", "rejected_invalid_payload", "error"]).notNull(),
+  note: text("note").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type StaffNote = typeof staffNotes.$inferSelect;
+export type InsertStaffNote = typeof staffNotes.$inferInsert;
+
 // Partner Authority Dashboard Tables
 export const partners = mysqlTable("partners", {
   id: int("id").autoincrement().primaryKey(),

@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Newsroom from "./pages/Newsroom";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import { StaffHome, StaffIntakeDetail, StaffIntakeList } from "./pages/StaffDashboard";
 
 function Router() {
   return (
@@ -28,6 +29,9 @@ function Router() {
       <Route path={"/newsroom"} component={Newsroom} />
       <Route path={"/privacy"} component={Privacy} />
       <Route path={"/terms"} component={Terms} />
+      <Route path={"/staff/intake/:id"} component={StaffIntakeDetail} />
+      <Route path={"/staff/intake"} component={StaffIntakeList} />
+      <Route path={"/staff"} component={StaffHome} />
       <Route component={NotFound} />
     </Switch>
   );

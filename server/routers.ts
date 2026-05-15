@@ -1,10 +1,11 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
+import { publicProcedure, protectedProcedure, adminProcedure, router } from "./_core/trpc";
+import { TRPCError } from "@trpc/server";
 import { sendContactNotification, sendAutoReply, sendAdminNotification, sendAdminEmail } from "./email";
 import { createPayment, getAvailableCurrencies, getPaymentStatus, estimatePrice } from "./crypto";
-import { createContactSubmission, getContactSubmissions, updateContactSubmissionStatus, createGrantLead, getGrantLeadsByCity } from "./db";
+import { createContactSubmission, getContactSubmissions, updateContactSubmissionStatus, createGrantLead, getGrantLeadsByCity, listIntakeRecords, getIntakeRecordWithStaffContext, updateQueuedIntakeRecordState, setIntakeGrantMatchFlag } from "./db";
 import { z } from "zod";
 
 export const appRouter = router({
@@ -104,6 +105,86 @@ export const appRouter = router({
           throw new Error("Unauthorized");
         }
         return await getGrantLeadsByCity(input.city);
+      }),
+  }),
+
+  intake: router({
+    listRecords: adminProcedure
+      .input(
+        z.object({
+          limit: z.number().int().min(1).max(100).default(50),
+          offset: z.number().int().min(0).default(0),
+        }).default({ limit: 50, offset: 0 })
+      )
+      .query(async ({ input }) => {
+        return await listIntakeRecords(input.limit, input.offset);
+      }),
+    getRecord: adminProcedure
+      .input(
+        z.object({
+          id: z.number().int().positive(),
+        })
+      )
+      .query(async ({ input }) => {
+        const result = await getIntakeRecordWithStaffContext(input.id);
+        if (!result) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Intake record not found" });
+        }
+        return result;
+      }),
+    updateQueuedState: adminProcedure
+      .input(
+        z.object({
+          id: z.number().int().positive(),
+          targetState: z.enum(["accepted", "needs_more_information", "duplicate_or_existing_record"]),
+          note: z.string().trim().min(1, "Staff note is required"),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        try {
+          const result = await updateQueuedIntakeRecordState(input.id, input.targetState, ctx.user.id, input.note);
+          if (!result) {
+            throw new TRPCError({ code: "SERVICE_UNAVAILABLE", message: "Database is not available" });
+          }
+          return result;
+        } catch (error) {
+          if (error instanceof TRPCError) {
+            throw error;
+          }
+          const message = error instanceof Error ? error.message : "Unable to update intake record";
+          if (message === "Intake record not found") {
+            throw new TRPCError({ code: "NOT_FOUND", message });
+          }
+          if (message === "Only queued records can be manually transitioned in this phase" || message === "Unsupported target state" || message === "Staff note is required") {
+            throw new TRPCError({ code: "BAD_REQUEST", message });
+          }
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message });
+        }
+      }),
+    setGrantMatchFlag: adminProcedure
+      .input(
+        z.object({
+          id: z.number().int().positive(),
+          grantMatchFlagged: z.boolean(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        try {
+          const result = await setIntakeGrantMatchFlag(input.id, input.grantMatchFlagged);
+          if (!result) {
+            throw new TRPCError({ code: "SERVICE_UNAVAILABLE", message: "Database is not available" });
+          }
+          return result;
+        } catch (error) {
+          if (error instanceof TRPCError) {
+            throw error;
+          }
+          const message = error instanceof Error ? error.message : "Unable to update grant match flag";
+          if (message === "Intake record not found") {
+            throw new TRPCError({ code: "NOT_FOUND", message });
+          }
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message });
+        }
       }),
   }),
 
