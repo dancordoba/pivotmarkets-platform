@@ -1,0 +1,164 @@
+{
+  "approved_route_count": 10,
+  "approved_routes": [
+    "/",
+    "/about",
+    "/how-it-works",
+    "/success-story",
+    "/explore-funding",
+    "/faq",
+    "/contact",
+    "/newsroom",
+    "/privacy",
+    "/terms"
+  ],
+  "route_checks": [
+    {
+      "route": "/",
+      "page": "Home.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/about",
+      "page": "About.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/how-it-works",
+      "page": "HowItWorks.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/success-story",
+      "page": "SuccessStory.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/explore-funding",
+      "page": "ExploreFunding.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/faq",
+      "page": "Faq.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/contact",
+      "page": "Contact.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/newsroom",
+      "page": "Newsroom.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/privacy",
+      "page": "Privacy.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    },
+    {
+      "route": "/terms",
+      "page": "Terms.tsx",
+      "router_entry_present": true,
+      "page_import_present": true,
+      "aeo_json_ld_present": true,
+      "b2b_positioning_present": true
+    }
+  ],
+  "extra_explicit_routes": [],
+  "fallback_not_found_present": true,
+  "forbidden_matches": [],
+  "metadata_checks": [
+    {
+      "page": "About.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "Contact.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "ExploreFunding.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "Faq.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "Home.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "HowItWorks.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "Newsroom.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "Privacy.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "SuccessStory.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    },
+    {
+      "page": "Terms.tsx",
+      "has_document_title_assignment": true,
+      "has_meta_description_update": true,
+      "has_b2b_meta_terms": true
+    }
+  ],
+  "status": "PASS",
+  "errors": []
+}

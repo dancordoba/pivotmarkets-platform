@@ -1,0 +1,370 @@
+--- Home
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { ArrowRight, CheckCircle2, FileText, Landmark, Layers3, ShieldCheck, Users } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const decisionMakerQuestions = [
+  {
+    question: "What does PivotMarkets do?",
+    answer:
+      "PivotMarkets helps organizations prepare a structured context package before entering a funding strategy workflow.",
+  },
+  {
+    question: "Who is it for?",
+    answer:
+      "It is designed for businesses, nonprofits, chambers, schools, local entities, and leadership teams evaluating funding strategy.",
+  },
+  {
+    question: "Does the public site decide eligibility?",
+    answer:
+      "No. Rev 2 collects and hands off organizational context only. Funding Engine review happens after explicit consent.",
+  },
+];
+
+const audienceCards = [
+  {
+    icon: Landmark,
+    title: "Organizations with strategic funding needs",
+    text: "Clarify goals, geography, use of funds, and timing before deeper funding strategy work begins.",
+  },
+  {
+    icon: Users,
+    title: "Leadership teams and authorized contacts",
+    text: "Prepare a responsible story package that can be reviewed internally before handoff.",
+  },
+125:export default function Home() {
+--- About
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { CheckCircle2, FileCheck2, Scale, ShieldCheck, Users } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const schemaId = "pivotmarkets-rev2-about-schema";
+
+const trustPillars = [
+  {
+    icon: ShieldCheck,
+    title: "Clear service boundaries",
+    text: "PivotMarkets Rev 2 prepares organizational context. It does not determine eligibility, guarantee funding, or replace downstream Funding Engine review.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Structured organizational context",
+    text: "The public site helps leadership collect goals, funding needs, geography, timeline, and contact authority in one disciplined story package.",
+  },
+  {
+    icon: Scale,
+    title: "Responsible funding exploration",
+    text: "The workflow is designed around review, consent, and transparent handoff instead of instant matches or unsupported funding promises.",
+  },
+];
+
+const operatingModel = [
+  "A public website that explains the process and collects organizational context.",
+  "A review-and-consent step before any context is sent to the PivotMarkets Funding Engine.",
+  "A protected boundary that keeps internal Funding Engine outputs out of the public Rev 2 experience.",
+];
+
+function useAboutSchema() {
+  useEffect(() => {
+    document.getElementById(schemaId)?.remove();
+74:export default function About() {
+--- HowItWorks
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { ArrowRight, CheckCircle2, ClipboardCheck, FileText, Send, ShieldCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const schemaId = "pivotmarkets-rev2-how-it-works-schema";
+
+const steps = [
+  {
+    icon: FileText,
+    title: "Create the organizational story",
+    text: "The organization shares its identity, goals, operating context, geography, funding need, use of funds, timeline, and contact authority.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Review the context package",
+    text: "The public site presents the information back as a structured summary so leadership can confirm the story before funding intent is submitted.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Confirm funding intent and consent",
+    text: "The Explore Funding route shows required acknowledgements and requires an affirmative action before the Funding Engine handoff can occur.",
+  },
+  {
+    icon: Send,
+    title: "Send to the Funding Engine boundary",
+    text: "After consent, Rev 2 sends the approved context package to the Funding Engine and displays only public-safe response states.",
+  },
+];
+
+const boundaryAnswers = [
+  {
+    question: "Does the public site evaluate grants?",
+    answer: "No. Rev 2 collects and hands off organizational context only. Funding Engine review happens after explicit consent.",
+102:export default function HowItWorks() {
+--- SuccessStory
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { ArrowRight, Building2, CalendarClock, Globe2, Mail, Target, WalletCards } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const schemaId = "pivotmarkets-rev2-success-story-schema";
+
+const storySections = [
+  {
+    icon: Building2,
+    title: "Organization identity",
+    text: "Name, organization type, sector, website if available, and the role of the person preparing the story.",
+  },
+  {
+    icon: Target,
+    title: "Goals and operating context",
+    text: "What the organization is trying to accomplish and why funding strategy matters now.",
+  },
+  {
+    icon: Globe2,
+    title: "Geography and service area",
+    text: "Country, state or region, and local context when that information helps frame the funding need.",
+  },
+  {
+    icon: WalletCards,
+    title: "Funding need and use of funds",
+    text: "A plain-language explanation of the need, intended use, and optional directional amount range.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Timeline and decision window",
+    text: "Whether the organization is acting immediately, this quarter, within six months, or still exploring.",
+  },
+  {
+88:export default function SuccessStory() {
+--- ExploreFunding
+import { FormEvent, useMemo, useState } from "react";
+import { Link } from "wouter";
+import { AlertTriangle, CheckCircle2, ClipboardCheck, FileJson, RefreshCw, ShieldCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+type HandoffStatus =
+  | "accepted"
+  | "queued"
+  | "needs_more_information"
+  | "duplicate_or_existing_record"
+  | "rejected_invalid_payload"
+  | "error";
+
+type FormState = {
+  contactName: string;
+  contactEmail: string;
+  roleTitle: string;
+  organizationName: string;
+  organizationType: string;
+  industry: string;
+  country: string;
+  stateRegion: string;
+  city: string;
+  primaryGoals: string;
+  fundingNeedDescription: string;
+  decisionWindow: string;
+  handoffApproved: boolean;
+  authorizedRepresentative: boolean;
+  boundaryAcknowledged: boolean;
+  marketingFollowupAllowed: boolean;
+};
+
+const initialFormState: FormState = {
+  contactName: "",
+152:export default function ExploreFunding() {
+--- Faq
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { CheckCircle2, HelpCircle, ShieldCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const faqItems = [
+  {
+    question: "What is PivotMarkets?",
+    answer:
+      "PivotMarkets is an AI-assisted funding strategy platform that helps organizations prepare structured context for funding exploration before any Funding Engine workflow begins.",
+  },
+  {
+    question: "Who does PivotMarkets serve?",
+    answer:
+      "PivotMarkets serves organizations such as businesses, nonprofits, chambers, schools, local entities, and leadership teams evaluating funding strategy.",
+  },
+  {
+    question: "Does PivotMarkets guarantee funding?",
+    answer:
+      "No. PivotMarkets Rev 2 does not guarantee funding, determine eligibility, create grant applications, or make award decisions.",
+  },
+  {
+    question: "What is an organizational story?",
+    answer:
+      "An organizational story is a structured explanation of the organization, goals, funding need, geography, timeline, and contact authority.",
+  },
+  {
+    question: "What happens after I explore funding?",
+    answer:
+      "After explicit consent, Rev 2 sends the approved context package to the PivotMarkets Funding Engine, which handles downstream workflow states.",
+  },
+  {
+    question: "Does the public site evaluate grants?",
+    answer:
+89:export default function Faq() {
+--- Contact
+import { useEffect, useState } from "react";
+import { Link } from "wouter";
+import { Building2, CheckCircle2, Mail, MessageSquare, ShieldCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const inquiryReasons = [
+  "Questions before starting an organizational story",
+  "Partnership or institutional conversation",
+  "Help understanding the Funding Engine handoff boundary",
+  "General business inquiry for PivotMarkets",
+];
+
+const schemaId = "pivotmarkets-rev2-contact-schema";
+
+function useContactSchema() {
+  useEffect(() => {
+    document.getElementById(schemaId)?.remove();
+
+    const schema = [
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        name: "Contact PivotMarkets",
+        url: "https://pivotmarkets.ai/contact",
+        description: "Contact PivotMarkets for organizational funding strategy inquiries and questions about the Rev 2 story flow.",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "PivotMarkets",
+        url: "https://pivotmarkets.ai",
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "business inquiries",
+60:export default function Contact() {
+--- Newsroom
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { CalendarClock, FileText, Megaphone, ShieldCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const schemaId = "pivotmarkets-rev2-newsroom-schema";
+
+const futureSections = [
+  {
+    icon: Megaphone,
+    title: "Platform updates",
+    text: "Future official updates about PivotMarkets Rev 2, public site changes, and approved Funding Engine handoff improvements will be published here.",
+  },
+  {
+    icon: FileText,
+    title: "Funding intelligence notes",
+    text: "Approved educational notes may be added later to explain funding strategy concepts without implying funding-fit determinations, qualification outcomes, or award decisions.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Organizational strategy briefs",
+    text: "Future briefs may help leadership teams understand organizational context preparation and responsible funding exploration boundaries.",
+  },
+];
+
+function useNewsroomSchema() {
+  useEffect(() => {
+    document.getElementById(schemaId)?.remove();
+
+    const schema = [
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "PivotMarkets Newsroom",
+68:export default function Newsroom() {
+--- Privacy
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { Database, FileCheck2, LockKeyhole, ShieldCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const schemaId = "pivotmarkets-rev2-privacy-schema";
+
+const dataCategories = [
+  "Contact details such as name, email address, and organizational role.",
+  "Organization profile information such as name, type, industry, website, geography, and size ranges when provided.",
+  "Organizational story context such as goals, funding need description, planned use of funds, timeline, and known deadlines.",
+  "Consent records connected to Funding Engine handoff authorization, authorized representative acknowledgement, boundary acknowledgement, and optional follow-up permission.",
+  "Session, user, referral, and UTM metadata when available to support continuity, attribution, and operational review.",
+];
+
+const useCases = [
+  {
+    icon: FileCheck2,
+    title: "Support the story flow",
+    text: "Information is used to help the visitor assemble a structured organizational context package before funding strategy workflow review.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Prepare approved handoff",
+    text: "Organization context may be sent to the PivotMarkets Funding Engine only after the visitor completes the required handoff acknowledgements and affirmative submission step.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "Enable appropriate follow-up",
+    text: "PivotMarkets may use inquiry details for operational follow-up, and optional marketing follow-up is treated separately from required handoff authorization.",
+  },
+];
+
+function usePrivacySchema() {
+68:export default function Privacy() {
+--- Terms
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { CheckCircle2, FileText, Scale, ShieldAlert, UserCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+
+const schemaId = "pivotmarkets-rev2-terms-schema";
+
+const serviceBoundaries = [
+  "PivotMarkets Rev 2 helps visitors prepare organizational context for potential funding strategy workflow review.",
+  "The public site does not determine eligibility, guarantee funding, create grant applications, or issue final funding decisions.",
+  "The Funding Engine may receive the organization context package only after the visitor completes the approved handoff consent flow.",
+  "Visitors are responsible for submitting accurate information and confirming they are authorized to act for the named organization.",
+];
+
+const responsibilityCards = [
+  {
+    icon: UserCheck,
+    title: "Authorized submissions",
+    text: "Visitors should submit organizational information only when they are authorized to do so or have permission from an authorized representative.",
+  },
+  {
+    icon: ShieldAlert,
+    title: "No public-site eligibility decision",
+    text: "Rev 2 may help prepare context, but it does not display internal funding analyses, recommendations, rankings, draft work products, decision artifacts, or Funding Engine private outputs.",
+  },
+  {
+    icon: FileText,
+    title: "Information accuracy",
+    text: "Organizations should review their context package before handoff and correct missing or inaccurate information before submitting it to the Funding Engine workflow.",
+  },
+];
+
+function useTermsSchema() {
+  useEffect(() => {
+67:export default function Terms() {

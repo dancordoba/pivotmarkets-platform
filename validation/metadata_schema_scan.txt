@@ -1,0 +1,334 @@
+client/src/pages/ComponentShowcase.tsx:199:      description: `Input: ${dialogInput}`,
+client/src/pages/ComponentShowcase.tsx:1325:                          description: "Your changes have been saved",
+client/src/pages/ComponentShowcase.tsx:1335:                          description:
+client/src/pages/ComponentShowcase.tsx:1346:                          description: "This is an information message",
+client/src/pages/ComponentShowcase.tsx:1356:                          description:
+client/src/pages/ComponentShowcase.tsx:1367:                          description: "Please wait",
+client/src/pages/FounderBio.tsx:10:      '@context': 'https://schema.org',
+client/src/pages/FounderBio.tsx:15:      description: 'Founder and CEO of PivotMarkets.ai, architect of Sovereign AI Infrastructure for regional economic resilience',
+client/src/pages/FounderBio.tsx:65:        description: 'Founder of sovereign AI infrastructure platform'
+client/src/pages/FounderBio.tsx:90:          description: 'Open-source framework for regional AI sovereignty grounded in 2026 Stanford AI Index benchmarks'
+client/src/pages/FounderBio.tsx:96:          description: 'Regional implementation of Sovereign AI infrastructure for artisan manufacturing'
+client/src/pages/FounderBio.tsx:117:    script.type = 'application/ld+json';
+client/src/pages/Home.tsx:62:const schemaId = "pivotmarkets-rev2-home-schema";
+client/src/pages/Home.tsx:66:    const existing = document.getElementById(schemaId);
+client/src/pages/Home.tsx:71:    const schema = [
+client/src/pages/Home.tsx:73:        "@context": "https://schema.org",
+client/src/pages/Home.tsx:77:        description:
+client/src/pages/Home.tsx:81:        "@context": "https://schema.org",
+client/src/pages/Home.tsx:92:        "@context": "https://schema.org",
+client/src/pages/Home.tsx:96:        description:
+client/src/pages/Home.tsx:100:        "@context": "https://schema.org",
+client/src/pages/Home.tsx:114:    script.id = schemaId;
+client/src/pages/Home.tsx:115:    script.type = "application/ld+json";
+client/src/pages/Home.tsx:116:    script.textContent = JSON.stringify(schema);
+client/src/pages/Home.tsx:120:      document.getElementById(schemaId)?.remove();
+client/src/pages/LogicArchitectCourses.tsx:9:    // Inject EducationEvent schema for all courses
+client/src/pages/LogicArchitectCourses.tsx:11:      '@context': 'https://schema.org',
+client/src/pages/LogicArchitectCourses.tsx:14:      description: 'Manufacturing-first AI courses designed for shop foremen and office leads in Indiana',
+client/src/pages/LogicArchitectCourses.tsx:23:          description: 'The "Gold Standard" for shop-floor literacy. Contextualizes AI for production environments.',
+client/src/pages/LogicArchitectCourses.tsx:28:            availability: 'https://schema.org/InStock'
+client/src/pages/LogicArchitectCourses.tsx:30:          eventStatus: 'https://schema.org/EventScheduled',
+client/src/pages/LogicArchitectCourses.tsx:40:          description: 'Critical for AEO. Teaches how to use AI to read complex financial/technical docs.',
+client/src/pages/LogicArchitectCourses.tsx:45:            availability: 'https://schema.org/InStock'
+client/src/pages/LogicArchitectCourses.tsx:47:          eventStatus: 'https://schema.org/EventScheduled',
+client/src/pages/LogicArchitectCourses.tsx:57:          description: 'Teaches how to build "Agents" that automate workflows without writing code.',
+client/src/pages/LogicArchitectCourses.tsx:62:            availability: 'https://schema.org/InStock'
+client/src/pages/LogicArchitectCourses.tsx:64:          eventStatus: 'https://schema.org/EventScheduled',
+client/src/pages/LogicArchitectCourses.tsx:74:          description: 'Practical day-to-day efficiency training for office staff managing data.',
+client/src/pages/LogicArchitectCourses.tsx:79:            availability: 'https://schema.org/InStock'
+client/src/pages/LogicArchitectCourses.tsx:81:          eventStatus: 'https://schema.org/EventScheduled',
+client/src/pages/LogicArchitectCourses.tsx:91:          description: 'Foundational credential from a high-authority global brand.',
+client/src/pages/LogicArchitectCourses.tsx:96:            availability: 'https://schema.org/InStock'
+client/src/pages/LogicArchitectCourses.tsx:98:          eventStatus: 'https://schema.org/EventScheduled',
+client/src/pages/LogicArchitectCourses.tsx:108:          description: 'Ideal for logistics-heavy hubs to manage risk and forecasting.',
+client/src/pages/LogicArchitectCourses.tsx:113:            availability: 'https://schema.org/InStock'
+client/src/pages/LogicArchitectCourses.tsx:115:          eventStatus: 'https://schema.org/EventScheduled',
+client/src/pages/LogicArchitectCourses.tsx:122:    script.type = 'application/ld+json';
+client/src/pages/LogicArchitectCourses.tsx:137:      description: 'The "Gold Standard" for shop-floor literacy. Contextualizes AI for production environments and is 100% free.',
+client/src/pages/LogicArchitectCourses.tsx:148:      description: 'Critical for AEO. Teaches how to use AI to read complex financial/technical docs—perfect for your "Refinery" model.',
+client/src/pages/LogicArchitectCourses.tsx:159:      description: 'Teaches how to build "Agents" that automate workflows (bidding/estimation) without writing a single line of code.',
+client/src/pages/LogicArchitectCourses.tsx:170:      description: 'Practical "Day-to-Day" efficiency training for the office staff managing the data "Trove."',
+client/src/pages/LogicArchitectCourses.tsx:181:      description: 'Great for "Geeksters" who want a foundational credential from a high-authority global brand.',
+client/src/pages/LogicArchitectCourses.tsx:192:      description: 'Ideal for the logistics-heavy hubs like Columbus or Batesville to manage risk and forecasting.',
+client/src/pages/LogicArchitectCourses.tsx:249:                <p className="text-muted-foreground mb-4 flex-grow">{course.description}</p>
+client/src/pages/Newsroom.tsx:7:const schemaId = "pivotmarkets-rev2-newsroom-schema";
+client/src/pages/Newsroom.tsx:29:    document.getElementById(schemaId)?.remove();
+client/src/pages/Newsroom.tsx:31:    const schema = [
+client/src/pages/Newsroom.tsx:33:        "@context": "https://schema.org",
+client/src/pages/Newsroom.tsx:37:        description:
+client/src/pages/Newsroom.tsx:41:        "@context": "https://schema.org",
+client/src/pages/Newsroom.tsx:45:        description:
+client/src/pages/Newsroom.tsx:49:        "@context": "https://schema.org",
+client/src/pages/Newsroom.tsx:59:    script.id = schemaId;
+client/src/pages/Newsroom.tsx:60:    script.type = "application/ld+json";
+client/src/pages/Newsroom.tsx:61:    script.textContent = JSON.stringify(schema);
+client/src/pages/Newsroom.tsx:64:    return () => document.getElementById(schemaId)?.remove();
+client/src/pages/PathfinderGateway.tsx:65:                description: "Protect AI ROI. Govern autonomous systems. Scale with sovereignty.",
+client/src/pages/PathfinderGateway.tsx:73:                description: "Build workforce resilience. Connect institutions. Serve your district.",
+client/src/pages/PathfinderGateway.tsx:81:                description: "Learn AI workflows. Build solutions. Create opportunity.",
+client/src/pages/PathfinderGateway.tsx:98:                <p className="text-sm text-slate-700 leading-relaxed">{segment.description}</p>
+client/src/pages/Protocol.tsx:9:    // GovernmentService schema for civic trust signals
+client/src/pages/Protocol.tsx:11:      "@context": "https://schema.org",
+client/src/pages/Protocol.tsx:14:      "description": "Non-technical briefing for City Council members and Chamber Board directors on data privacy guarantees and workforce development benefits of Sovereign AI infrastructure.",
+client/src/pages/Protocol.tsx:37:    // PublicPolicy schema linking to 2026 IN AI mandate
+client/src/pages/Protocol.tsx:39:      "@context": "https://schema.org",
+client/src/pages/Protocol.tsx:42:      "description": "State-aligned policy framework for deploying Sovereign AI infrastructure that prioritizes data residency, workforce development, and local economic resilience.",
+client/src/pages/Protocol.tsx:59:    // Organization schema with IN AI Resource Partner designation and GeoShape
+client/src/pages/Protocol.tsx:61:      "@context": "https://schema.org",
+client/src/pages/Protocol.tsx:64:      "description": "Human-Centered AI infrastructure provider and IN AI Resource Partner for North Central Indiana Innovate Hub",
+client/src/pages/Protocol.tsx:97:    // ScholarlyArticle schema with citation to Stanford AI Index
+client/src/pages/Protocol.tsx:99:      "@context": "https://schema.org",
+client/src/pages/Protocol.tsx:102:      "description": "Technical protocol for deploying sovereign AI infrastructure that achieves frontier-level performance at 1/7th the cost, validated by 2026 Stanford AI Index benchmarks.",
+client/src/pages/Protocol.tsx:125:    script1.type = "application/ld+json";
+client/src/pages/Protocol.tsx:130:    script2.type = "application/ld+json";
+client/src/pages/Protocol.tsx:135:    script3.type = "application/ld+json";
+client/src/pages/Protocol.tsx:140:    script4.type = "application/ld+json";
+client/src/pages/Protocol.tsx:144:    // Knowledge Graph Organization schema for state partnerships
+client/src/pages/Protocol.tsx:146:      "@context": "https://schema.org",
+client/src/pages/Protocol.tsx:149:      "description": "Technical service provider aligned with Indiana's Vision AI Alliance ecosystem and Industry 4.0 goals.",
+client/src/pages/Protocol.tsx:156:          "description": "Human-Centered AI research and Logic Architect certification partnership"
+client/src/pages/Protocol.tsx:162:          "description": "Technical validation and deployment infrastructure for sovereign data systems"
+client/src/pages/Protocol.tsx:167:          "description": "Industry 4.0 manufacturing standards and IoT integration collaboration"
+client/src/pages/Protocol.tsx:174:          "description": "Perception layer for manufacturing automation"
+client/src/pages/Protocol.tsx:179:          "description": "Governance and data residency layer for Vision AI systems"
+client/src/pages/Protocol.tsx:189:    script5.type = "application/ld+json";
+client/src/pages/RegionalPartners.tsx:9:    // Organization schema with connectedTo relationships
+client/src/pages/RegionalPartners.tsx:11:      "@context": "https://schema.org",
+client/src/pages/RegionalPartners.tsx:14:      "description": "Technical service provider connected to Indiana's Vision AI Alliance ecosystem partners.",
+client/src/pages/RegionalPartners.tsx:21:          "description": "Human-Centered AI research and Logic Architect certification"
+client/src/pages/RegionalPartners.tsx:27:          "description": "IoT and data sovereignty technical validation"
+client/src/pages/RegionalPartners.tsx:32:          "description": "Industry 4.0 manufacturing standards and IoT integration"
+client/src/pages/RegionalPartners.tsx:55:    script.type = "application/ld+json";
+client/src/pages/RegionalPartners.tsx:69:      description: "Academic partnership advancing human-centered AI research and Logic Architect certification curriculum.",
+client/src/pages/RegionalPartners.tsx:78:      description: "Technical validation and deployment infrastructure for sovereign data systems in manufacturing environments.",
+client/src/pages/RegionalPartners.tsx:87:      description: "Collaborative alignment on Industry 4.0 manufacturing standards and IoT integration for regional makers.",
+client/src/pages/RegionalPartners.tsx:150:                          {partner.description}
+client/src/pages/RegionalShowcases.tsx:9: * - Deep AEO metadata with IEDC and local chamber associations
+client/src/pages/RegionalShowcases.tsx:50:          description: "Evaluate current craft production workflows, quality control processes, and market reach capabilities."
+client/src/pages/RegionalShowcases.tsx:55:          description: "Validate AI integration readiness for artisan production and quality assurance standards."
+client/src/pages/RegionalShowcases.tsx:60:          description: "Implement AI-powered production tracking and quality management systems."
+client/src/pages/RegionalShowcases.tsx:65:          description: "Establish secure, local data residency for craft business operations and customer relationships."
+client/src/pages/RegionalShowcases.tsx:86:          description: "Assess current furniture production workflows, design processes, and manufacturing capabilities."
+client/src/pages/RegionalShowcases.tsx:91:          description: "Validate AI integration compatibility with furniture production standards and design workflows."
+client/src/pages/RegionalShowcases.tsx:96:          description: "Implement AI-driven production optimization and design-to-manufacture acceleration."
+client/src/pages/RegionalShowcases.tsx:101:          description: "Secure local data residency for manufacturing operations and design intellectual property."
+client/src/pages/RegionalShowcases.tsx:122:          description: "Evaluate medical device development workflows, regulatory compliance processes, and manufacturing capabilities."
+client/src/pages/RegionalShowcases.tsx:127:          description: "Validate AI integration compliance with FDA regulations and medical device standards."
+client/src/pages/RegionalShowcases.tsx:132:          description: "Deploy AI-powered development acceleration and regulatory compliance management."
+client/src/pages/RegionalShowcases.tsx:137:          description: "Establish HIPAA-compliant, local data residency for clinical and regulatory data."
+client/src/pages/RegionalShowcases.tsx:160:          description: "Analyze advanced manufacturing processes, logistics networks, and supply chain capabilities."
+client/src/pages/RegionalShowcases.tsx:165:          description: "Validate AI integration readiness for precision manufacturing and logistics optimization."
+client/src/pages/RegionalShowcases.tsx:170:          description: "Implement AI-powered production optimization and supply chain intelligence."
+client/src/pages/RegionalShowcases.tsx:175:          description: "Secure local data residency for manufacturing operations and supply chain data."
+client/src/pages/RegionalShowcases.tsx:196:          description: "Evaluate precision engineering workflows, quality standards, and compliance requirements."
+client/src/pages/RegionalShowcases.tsx:201:          description: "Validate AI integration compliance with defense contracting standards and security requirements."
+client/src/pages/RegionalShowcases.tsx:206:          description: "Deploy AI-powered quality assurance and secure engineering workflows."
+client/src/pages/RegionalShowcases.tsx:211:          description: "Establish secure, local data residency compliant with defense contracting requirements."
+client/src/pages/RegionalShowcases.tsx:232:          description: "Assess casket manufacturing workflows, logistics processes, and customer service capabilities."
+client/src/pages/RegionalShowcases.tsx:237:          description: "Validate AI integration compatibility with manufacturing standards and logistics workflows."
+client/src/pages/RegionalShowcases.tsx:242:          description: "Implement AI-driven production optimization and logistics acceleration."
+client/src/pages/RegionalShowcases.tsx:247:          description: "Secure local data residency for manufacturing and customer relationship data."
+client/src/pages/RegionalShowcases.tsx:317:            {city.roadmapSteps[selectedStep].description}
+client/src/pages/RegionalShowcases.tsx:331:  // Inject GEO schemas for entity authority positioning
+client/src/pages/VisionAIIntegration.tsx:9:    // TechArticle schema for technical documentation
+client/src/pages/VisionAIIntegration.tsx:11:      "@context": "https://schema.org",
+client/src/pages/VisionAIIntegration.tsx:14:      "description": "Step-by-step technical documentation for integrating Vision AI systems with the Sovereign Protocol for secure, local data governance.",
+client/src/pages/VisionAIIntegration.tsx:25:          "description": "Perception layer for manufacturing automation"
+client/src/pages/VisionAIIntegration.tsx:30:          "description": "Governance and data residency layer"
+client/src/pages/VisionAIIntegration.tsx:47:          "description": "Industry 4.0 partner"
+client/src/pages/VisionAIIntegration.tsx:53:    script.type = "application/ld+json";
+client/src/pages/VisionAIIntegration.tsx:163:                  <li>• Processing metadata</li>
+client/src/pages/About.tsx:7:const schemaId = "pivotmarkets-rev2-about-schema";
+client/src/pages/About.tsx:35:    document.getElementById(schemaId)?.remove();
+client/src/pages/About.tsx:37:    const schema = [
+client/src/pages/About.tsx:39:        "@context": "https://schema.org",
+client/src/pages/About.tsx:43:        description:
+client/src/pages/About.tsx:47:        "@context": "https://schema.org",
+client/src/pages/About.tsx:51:        description:
+client/src/pages/About.tsx:55:        "@context": "https://schema.org",
+client/src/pages/About.tsx:65:    script.id = schemaId;
+client/src/pages/About.tsx:66:    script.type = "application/ld+json";
+client/src/pages/About.tsx:67:    script.textContent = JSON.stringify(schema);
+client/src/pages/About.tsx:70:    return () => document.getElementById(schemaId)?.remove();
+client/src/pages/HowItWorks.tsx:7:const schemaId = "pivotmarkets-rev2-how-it-works-schema";
+client/src/pages/HowItWorks.tsx:49:    document.getElementById(schemaId)?.remove();
+client/src/pages/HowItWorks.tsx:51:    const schema = [
+client/src/pages/HowItWorks.tsx:53:        "@context": "https://schema.org",
+client/src/pages/HowItWorks.tsx:56:        description:
+client/src/pages/HowItWorks.tsx:66:        "@context": "https://schema.org",
+client/src/pages/HowItWorks.tsx:70:        description:
+client/src/pages/HowItWorks.tsx:74:        "@context": "https://schema.org",
+client/src/pages/HowItWorks.tsx:83:        "@context": "https://schema.org",
+client/src/pages/HowItWorks.tsx:93:    script.id = schemaId;
+client/src/pages/HowItWorks.tsx:94:    script.type = "application/ld+json";
+client/src/pages/HowItWorks.tsx:95:    script.textContent = JSON.stringify(schema);
+client/src/pages/HowItWorks.tsx:98:    return () => document.getElementById(schemaId)?.remove();
+client/src/pages/SuccessStory.tsx:7:const schemaId = "pivotmarkets-rev2-success-story-schema";
+client/src/pages/SuccessStory.tsx:45:  "Primary goals and funding need description",
+client/src/pages/SuccessStory.tsx:51:    document.getElementById(schemaId)?.remove();
+client/src/pages/SuccessStory.tsx:53:    const schema = [
+client/src/pages/SuccessStory.tsx:55:        "@context": "https://schema.org",
+client/src/pages/SuccessStory.tsx:59:        description:
+client/src/pages/SuccessStory.tsx:63:        "@context": "https://schema.org",
+client/src/pages/SuccessStory.tsx:69:        "@context": "https://schema.org",
+client/src/pages/SuccessStory.tsx:79:    script.id = schemaId;
+client/src/pages/SuccessStory.tsx:80:    script.type = "application/ld+json";
+client/src/pages/SuccessStory.tsx:81:    script.textContent = JSON.stringify(schema);
+client/src/pages/SuccessStory.tsx:84:    return () => document.getElementById(schemaId)?.remove();
+client/src/pages/ExploreFunding.tsx:61:  { key: "fundingNeedDescription", label: "Funding need description" },
+client/src/pages/ExploreFunding.tsx:138:      description: form.fundingNeedDescription,
+client/src/pages/ExploreFunding.tsx:300:                  Funding need description
+client/src/pages/Faq.tsx:41:      "The minimum handoff fields are contact name and email, organization name, organization type, industry, country, primary goals, funding need description, decision window, and required consent acknowledgements.",
+client/src/pages/Faq.tsx:50:const schemaId = "pivotmarkets-rev2-faq-schema";
+client/src/pages/Faq.tsx:54:    document.getElementById(schemaId)?.remove();
+client/src/pages/Faq.tsx:56:    const schema = [
+client/src/pages/Faq.tsx:58:        "@context": "https://schema.org",
+client/src/pages/Faq.tsx:70:        "@context": "https://schema.org",
+client/src/pages/Faq.tsx:80:    script.id = schemaId;
+client/src/pages/Faq.tsx:81:    script.type = "application/ld+json";
+client/src/pages/Faq.tsx:82:    script.textContent = JSON.stringify(schema);
+client/src/pages/Faq.tsx:85:    return () => document.getElementById(schemaId)?.remove();
+client/src/pages/Contact.tsx:14:const schemaId = "pivotmarkets-rev2-contact-schema";
+client/src/pages/Contact.tsx:18:    document.getElementById(schemaId)?.remove();
+client/src/pages/Contact.tsx:20:    const schema = [
+client/src/pages/Contact.tsx:22:        "@context": "https://schema.org",
+client/src/pages/Contact.tsx:26:        description: "Contact PivotMarkets for organizational funding strategy inquiries and questions about the Rev 2 story flow.",
+client/src/pages/Contact.tsx:29:        "@context": "https://schema.org",
+client/src/pages/Contact.tsx:41:        "@context": "https://schema.org",
+client/src/pages/Contact.tsx:51:    script.id = schemaId;
+client/src/pages/Contact.tsx:52:    script.type = "application/ld+json";
+client/src/pages/Contact.tsx:53:    script.textContent = JSON.stringify(schema);
+client/src/pages/Contact.tsx:56:    return () => document.getElementById(schemaId)?.remove();
+client/src/pages/Privacy.tsx:7:const schemaId = "pivotmarkets-rev2-privacy-schema";
+client/src/pages/Privacy.tsx:12:  "Organizational story context such as goals, funding need description, planned use of funds, timeline, and known deadlines.",
+client/src/pages/Privacy.tsx:14:  "Session, user, referral, and UTM metadata when available to support continuity, attribution, and operational review.",
+client/src/pages/Privacy.tsx:37:    document.getElementById(schemaId)?.remove();
+client/src/pages/Privacy.tsx:39:    const schema = [
+client/src/pages/Privacy.tsx:41:        "@context": "https://schema.org",
+client/src/pages/Privacy.tsx:45:        description:
+client/src/pages/Privacy.tsx:49:        "@context": "https://schema.org",
+client/src/pages/Privacy.tsx:59:    script.id = schemaId;
+client/src/pages/Privacy.tsx:60:    script.type = "application/ld+json";
+client/src/pages/Privacy.tsx:61:    script.textContent = JSON.stringify(schema);
+client/src/pages/Privacy.tsx:64:    return () => document.getElementById(schemaId)?.remove();
+client/src/pages/Terms.tsx:7:const schemaId = "pivotmarkets-rev2-terms-schema";
+client/src/pages/Terms.tsx:36:    document.getElementById(schemaId)?.remove();
+client/src/pages/Terms.tsx:38:    const schema = [
+client/src/pages/Terms.tsx:40:        "@context": "https://schema.org",
+client/src/pages/Terms.tsx:44:        description:
+client/src/pages/Terms.tsx:48:        "@context": "https://schema.org",
+client/src/pages/Terms.tsx:58:    script.id = schemaId;
+client/src/pages/Terms.tsx:59:    script.type = "application/ld+json";
+client/src/pages/Terms.tsx:60:    script.textContent = JSON.stringify(schema);
+client/src/pages/Terms.tsx:63:    return () => document.getElementById(schemaId)?.remove();
+client/src/components/Breadcrumb.test.ts:29:  it('should inject BreadcrumbList schema correctly', () => {
+client/src/components/Breadcrumb.test.ts:35:      '@context': 'https://schema.org',
+client/src/components/Breadcrumb.test.ts:71:  it('should generate correct schema positions', () => {
+client/src/components/Breadcrumb.test.ts:82:  it('should preserve href values in schema', () => {
+client/src/components/Breadcrumb.test.ts:87:    const schemaItem = {
+client/src/components/Breadcrumb.test.ts:94:    expect(schemaItem.name).toBe('Glossary');
+client/src/components/Breadcrumb.test.ts:95:    expect(schemaItem.item).toContain('/glossary');
+client/src/components/Breadcrumb.tsx:15:    // Inject BreadcrumbList schema for SEO
+client/src/components/Breadcrumb.tsx:17:      "@context": "https://schema.org",
+client/src/components/Breadcrumb.tsx:28:    script.type = "application/ld+json";
+client/src/components/CryptoPaymentButton.tsx:30:  description: string;
+client/src/components/CryptoPaymentButton.tsx:36:  description,
+client/src/components/CryptoPaymentButton.tsx:62:        order_description: description,
+client/src/components/GrantStackProgressBar.tsx:21:    description: string;
+client/src/components/GrantStackProgressBar.tsx:104:                  {program.description}
+client/src/components/GrantStackProgressBar.tsx:111:                    <p className="mb-2">{program.description}</p>
+client/src/components/GrantStackProgressBar.tsx:133:        type="application/ld+json"
+client/src/components/GrantStackProgressBar.tsx:136:            "@context": "https://schema.org",
+client/src/components/GrantStackProgressBar.tsx:139:            description: `Grant funding opportunities for ${city} businesses`,
+client/src/components/GrantStackProgressBar.tsx:155:              description: program.description,
+client/src/components/GrantStackROICalculator.tsx:21:  // Inject FinancialService schema for grant compatibility
+client/src/components/GrantStackROICalculator.tsx:24:      "@context": "https://schema.org",
+client/src/components/GrantStackROICalculator.tsx:27:      "description": "Calculate ROI from stacking Indiana Manufacturing Readiness Grant, READI 2.0, and Cloud Credits",
+client/src/components/GrantStackROICalculator.tsx:42:          "description": "State manufacturing support program",
+client/src/components/GrantStackROICalculator.tsx:45:          "availability": "https://schema.org/InStock"
+client/src/components/GrantStackROICalculator.tsx:50:          "description": "Regional economic development funds",
+client/src/components/GrantStackROICalculator.tsx:53:          "availability": "https://schema.org/InStock"
+client/src/components/GrantStackROICalculator.tsx:58:          "description": "Big Three cloud provider credits",
+client/src/components/GrantStackROICalculator.tsx:61:          "availability": "https://schema.org/InStock"
+client/src/components/GrantStackROICalculator.tsx:67:    script.type = 'application/ld+json';
+client/src/components/Map.tsx:89:const API_KEY = import.meta.env.VITE_FRONTEND_FORGE_API_KEY;
+client/src/components/Map.tsx:91:  import.meta.env.VITE_FRONTEND_FORGE_API_URL ||
+client/src/components/SovereignBastion.tsx:6:    // TechArticle schema for Sovereign Bastion component
+client/src/components/SovereignBastion.tsx:8:      "@context": "https://schema.org",
+client/src/components/SovereignBastion.tsx:11:      "description": "Interactive visualization of how data sovereignty, optimized workflows, and institutional knowledge create differentiated moats against commoditized AI models.",
+client/src/components/SovereignBastion.tsx:16:          "description": "Local data residency and proprietary manufacturing intelligence"
+client/src/components/SovereignBastion.tsx:21:          "description": "Regional AI infrastructure resilient to global market disruptions"
+client/src/components/SovereignBastion.tsx:33:        "description": "Top model performance converged within 2.7% margin; DeepSeek V4-Pro achieves 21x cost reduction vs. Claude Opus 4.7"
+client/src/components/SovereignBastion.tsx:39:    script.type = "application/ld+json";
+client/src/components/SovereignBastion.tsx:50:      {/* Hidden description for Vision-based AI crawlers */}
+client/src/components/StatewideFAQ.tsx:12:    // Inject FAQ schema markup
+client/src/components/StatewideFAQ.tsx:14:      '@context': 'https://schema.org',
+client/src/components/StatewideFAQ.tsx:52:    // Add SearchAction schema for voice AEO
+client/src/components/StatewideFAQ.tsx:54:      '@context': 'https://schema.org',
+client/src/components/StatewideFAQ.tsx:63:    faqScript.type = 'application/ld+json';
+client/src/components/StatewideFAQ.tsx:68:    searchScript.type = 'application/ld+json';
+client/src/components/ui/alert-dialog.tsx:112:      data-slot="alert-dialog-description"
+client/src/components/ui/alert.tsx:13:          "text-destructive bg-card [&>svg]:text-current *:data-[slot=alert-description]:text-destructive/90",
+client/src/components/ui/alert.tsx:56:      data-slot="alert-description"
+client/src/components/ui/card.tsx:44:      data-slot="card-description"
+client/src/components/ui/carousel.tsx:123:        aria-roledescription="carousel"
+client/src/components/ui/carousel.tsx:160:      aria-roledescription="slide"
+client/src/components/ui/command.tsx:34:  description = "Search for a command to run...",
+client/src/components/ui/command.tsx:41:  description?: string;
+client/src/components/ui/command.tsx:49:        <DialogDescription>{description}</DialogDescription>
+client/src/components/ui/dialog.tsx:190:      data-slot="dialog-description"
+client/src/components/ui/drawer.tsx:115:      data-slot="drawer-description"
+client/src/components/ui/empty.tsx:74:      data-slot="empty-description"
+client/src/components/ui/field.tsx:142:      data-slot="field-description"
+client/src/components/ui/form.tsx:62:    formDescriptionId: `${id}-form-item-description`,
+client/src/components/ui/form.tsx:131:      data-slot="form-description"
+client/src/components/ui/item.tsx:75:  "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5",
+client/src/components/ui/item.tsx:135:      data-slot="item-description"
+client/src/components/ui/sheet.tsx:123:      data-slot="sheet-description"
+client/src/components/ui/sidebar.tsx:100:        (event.metaKey || event.ctrlKey)
+client/src/lib/cityAeoSchemas.ts:4: * Provides localized schema markup for each city in the Dual-Triad Regional Showcases,
+client/src/lib/cityAeoSchemas.ts:19:  "@context": "https://schema.org",
+client/src/lib/cityAeoSchemas.ts:22:  "description": `${cityName}, Indiana - ${industry} Hub`,
+client/src/lib/cityAeoSchemas.ts:51:  "@context": "https://schema.org",
+client/src/lib/cityAeoSchemas.ts:54:  "description": `PivotMarkets.ai regional hub for ${industry} in ${cityName}, Indiana`,
+client/src/lib/cityAeoSchemas.ts:100:  "@context": "https://schema.org",
+client/src/lib/cityAeoSchemas.ts:104:  "description": `Regional hub for ${industry} AI infrastructure and economic development in ${cityName}, Indiana`,
+client/src/lib/cityAeoSchemas.ts:152:  "@context": "https://schema.org",
+client/src/lib/cityAeoSchemas.ts:155:  "description": `Comprehensive AI readiness and economic assessment for ${industry} businesses in ${cityName}, Indiana`,
+client/src/lib/cityAeoSchemas.ts:175:    "availability": "https://schema.org/InStock"
+client/src/lib/cityAeoSchemas.ts:184:  "@context": "https://schema.org",
+client/src/lib/cityAeoSchemas.ts:187:  "description": `Professional AI infrastructure services specialized for ${industry} industry`,
+client/src/lib/cityAeoSchemas.ts:205: * Inject all city-specific schemas into document head
+client/src/lib/cityAeoSchemas.ts:207:export const injectCitySchemas = (schemas: CitySchema[]): void => {
+client/src/lib/cityAeoSchemas.ts:210:  schemas.forEach(schema => {
+client/src/lib/cityAeoSchemas.ts:212:    script.type = "application/ld+json";
+client/src/lib/cityAeoSchemas.ts:213:    script.textContent = JSON.stringify(schema);
+client/src/lib/cityAeoSchemas.ts:214:    script.setAttribute("data-city-schema", schema["@type"]);
+client/src/lib/cityAeoSchemas.ts:220: * Clean up city-specific schemas from document head
+client/src/lib/cityAeoSchemas.ts:225:  const scripts = document.querySelectorAll('script[data-city-schema]');
+client/src/lib/cityAeoSchemas.ts:247:    description: string;
+client/src/lib/cityAeoSchemas.ts:252: * Generate all schemas for a city
+client/src/lib/geoSchemas.ts:4: * Provides shared JSON-LD schemas for establishing PivotMarkets as a Technical Service Provider
+client/src/lib/geoSchemas.ts:8: * - Import schemas in useEffect hooks
+client/src/lib/geoSchemas.ts:24:  "@context": "https://schema.org",
+client/src/lib/geoSchemas.ts:28:  "description": "Technical Service Provider aligned with Indiana's 2026 IN AI Initiative, delivering sovereign AI infrastructure and practitioner-led workflows for regional economic development.",
+client/src/lib/geoSchemas.ts:53:  "@context": "https://schema.org",
+client/src/lib/geoSchemas.ts:56:  "description": "Sovereign AI infrastructure and technical services for Indiana's regional economic development, aligned with the 2026 IN AI Initiative.",
+client/src/lib/geoSchemas.ts:102:  "@context": "https://schema.org",
+client/src/lib/geoSchemas.ts:105:  "description": "Technical service aligned with Indiana's 2026 IN AI Initiative, providing sovereign AI infrastructure and practitioner-led workflows for chambers of commerce and regional economic development.",
+client/src/lib/geoSchemas.ts:131:  "@context": "https://schema.org",
+client/src/lib/geoSchemas.ts:134:  "description": "Technical Service Provider for Indiana's regional economic development, aligned with the 2026 IN AI Initiative.",
+client/src/lib/geoSchemas.ts:157:  "@context": "https://schema.org",
+client/src/lib/geoSchemas.ts:160:  "description": "Professional services for implementing sovereign AI infrastructure aligned with Indiana's 2026 IN AI Initiative.",
+client/src/lib/geoSchemas.ts:186:  "@context": "https://schema.org",
+client/src/lib/geoSchemas.ts:190:  "description": "Sovereign AI infrastructure platform for regional economic development, aligned with Indiana's 2026 IN AI Initiative.",
+client/src/lib/geoSchemas.ts:202:    "availability": "https://schema.org/InStock"
+client/src/lib/geoSchemas.ts:211: * Inject all GEO schemas into document head
+client/src/lib/geoSchemas.ts:214:export const injectGeoSchemas = (schemas: GeoSchema[]): void => {
+client/src/lib/geoSchemas.ts:217:  schemas.forEach(schema => {
+client/src/lib/geoSchemas.ts:219:    script.type = "application/ld+json";
+client/src/lib/geoSchemas.ts:220:    script.textContent = JSON.stringify(schema);
+client/src/lib/geoSchemas.ts:221:    script.setAttribute("data-geo-schema", schema["@type"]);
+client/src/lib/geoSchemas.ts:227: * Clean up GEO schemas from document head
+client/src/lib/geoSchemas.ts:233:  const scripts = document.querySelectorAll('script[data-geo-schema]');

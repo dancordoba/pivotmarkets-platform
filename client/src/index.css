@@ -5,7 +5,7 @@
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
@@ -42,60 +42,69 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* Design Philosophy: Deliberate Clarity with Elegant Simplicity
-   - Scandinavian Minimalism meets Swiss Typography
-   - Generous whitespace, precision typography, restrained color palette
-   - Deep blue primary (oklch(0.45 0.12 240)) for trust and intelligence
-   - Muted teal accent (oklch(0.55 0.08 195)) for subtle highlights
-   - Rich charcoal text (oklch(0.25 0.01 240)) for reduced eye strain
-*/
-
 :root {
-  --primary: oklch(0.45 0.12 240); /* Deep sophisticated blue */
-  --primary-foreground: oklch(0.98 0.01 240);
-  --sidebar-primary: oklch(0.45 0.12 240);
-  --sidebar-primary-foreground: oklch(0.98 0.01 240);
-  --chart-1: oklch(0.55 0.08 195);
-  --chart-2: oklch(0.45 0.12 240);
-  --chart-3: oklch(0.35 0.10 240);
-  --chart-4: oklch(0.65 0.06 195);
-  --chart-5: oklch(0.40 0.11 240);
-  --radius: 0.375rem; /* Subtle rounded corners */
-  --background: oklch(1 0 0); /* Pure white */
-  --foreground: oklch(0.25 0.01 240); /* Rich charcoal */
-  --card: oklch(0.99 0.002 75); /* Soft warm white */
-  --card-foreground: oklch(0.25 0.01 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.01 240);
-  --secondary: oklch(0.97 0.005 75); /* Soft warm gray */
-  --secondary-foreground: oklch(0.25 0.01 240);
-  --muted: oklch(0.95 0.005 75);
-  --muted-foreground: oklch(0.50 0.02 240);
-  --accent: oklch(0.55 0.08 195); /* Muted teal */
-  --accent-foreground: oklch(0.98 0.01 195);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.90 0.005 240); /* Subtle borders */
-  --input: oklch(0.90 0.005 240);
-  --ring: oklch(0.45 0.12 240);
-  --sidebar: oklch(0.99 0.002 75);
-  --sidebar-foreground: oklch(0.25 0.01 240);
-  --sidebar-accent: oklch(0.97 0.005 75);
-  --sidebar-accent-foreground: oklch(0.25 0.01 240);
-  --sidebar-border: oklch(0.90 0.005 240);
-  --sidebar-ring: oklch(0.45 0.12 240);
+  --primary: #1e3a5f;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f5f0;
+  --secondary-foreground: #25313d;
+  --accent: #2a9d8f;
+  --accent-foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #25313d;
+  --card: #ffffff;
+  --card-foreground: #25313d;
+  --popover: #ffffff;
+  --popover-foreground: #25313d;
+  --muted: #f7f5f0;
+  --muted-foreground: #5f6f7f;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: #d8dee6;
+  --input: #d8dee6;
+  --ring: #2563a8;
+  --chart-1: #1e3a5f;
+  --chart-2: #2563a8;
+  --chart-3: #2a9d8f;
+  --chart-4: #b7791f;
+  --chart-5: #5f6f7f;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #25313d;
+  --sidebar-primary: #1e3a5f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f7f5f0;
+  --sidebar-accent-foreground: #25313d;
+  --sidebar-border: #d8dee6;
+  --sidebar-ring: #2563a8;
+  --radius: 8px;
+
+  --pm-navy: #1e3a5f;
+  --pm-blue: #2563a8;
+  --pm-teal: #2a9d8f;
+  --pm-charcoal: #25313d;
+  --pm-warm-surface: #f7f5f0;
+  --pm-border: #d8dee6;
+  --pm-amber: #b7791f;
+  --pm-error: #b42318;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1, "cv02" 1, "cv03" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -107,21 +116,30 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
-  
-  /* Typography refinements for elegant simplicity */
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--pm-charcoal);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
   }
-  
+
   p {
-    line-height: 1.6;
+    line-height: 1.7;
   }
-  
+
+  a {
+    text-underline-offset: 4px;
+  }
+
   code {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-weight: 600;
   }
 }
 
@@ -148,205 +166,57 @@
 
   @media (min-width: 1024px) {
     .container {
+      max-width: 1180px;
       padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px;
     }
   }
-  
-  /* Elegant section divider */
-  .section-divider {
-    height: 1px;
-    background: oklch(0.90 0.005 240 / 0.3);
-    margin: 4rem 0;
+
+  .pm-section {
+    @apply py-16 md:py-24;
   }
-  
-  /* Visual enhancements for authority and polish */
-  .hero-gradient {
-    background: linear-gradient(
-      135deg,
-      oklch(1 0 0) 0%,
-      oklch(0.97 0.005 75) 50%,
-      oklch(0.95 0.008 195) 100%
-    );
+
+  .pm-section-soft {
+    background: var(--pm-warm-surface);
   }
-  
-  .pillar-card {
-    @apply relative overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:shadow-lg hover:border-primary/30;
-    background: linear-gradient(
-      135deg,
-      oklch(0.99 0.002 75) 0%,
-      oklch(0.98 0.003 195) 100%
-    );
+
+  .pm-card {
+    @apply rounded-lg border border-border bg-card shadow-sm;
   }
-  
-  .pillar-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(
-      90deg,
-      oklch(0.45 0.12 240) 0%,
-      oklch(0.55 0.08 195) 100%
-    );
+
+  .pm-card-elevated {
+    @apply rounded-lg border border-border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md;
   }
-  
-  .pillar-card:hover {
-    transform: translateY(-4px);
+
+  .pm-eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.18em];
+    color: var(--pm-blue);
   }
-  
-  .insight-box {
-    @apply relative overflow-hidden rounded-xl border-2 p-6 md:p-8 transition-all duration-300;
+
+  .pm-link {
+    color: var(--pm-blue);
+    font-weight: 650;
   }
-  
-  .insight-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      circle at top right,
-      currentColor 0%,
-      transparent 70%
-    );
-    opacity: 0.03;
-    pointer-events: none;
+
+  .pm-link:hover {
+    color: var(--pm-navy);
   }
-  
-  .faq-item {
-    @apply relative overflow-hidden rounded-lg border border-border bg-card transition-all duration-300;
+
+  .pm-advisory-box {
+    @apply rounded-lg border p-5;
+    background: rgba(183, 121, 31, 0.08);
+    border-color: rgba(183, 121, 31, 0.28);
+    color: var(--pm-charcoal);
   }
-  
-  .faq-item:hover {
-    @apply border-primary/30 shadow-md;
+
+  .pm-hero-gradient {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(42, 157, 143, 0.12), transparent 32%),
+      radial-gradient(circle at 84% 12%, rgba(37, 99, 168, 0.14), transparent 34%),
+      linear-gradient(135deg, #ffffff 0%, #f7f5f0 100%);
   }
-  
-  .faq-item summary {
-    @apply cursor-pointer select-none p-6 font-semibold transition-colors duration-200;
-  }
-  
-  .faq-item summary:hover {
-    @apply text-primary;
-  }
-  
-  .faq-item[open] summary {
-    @apply bg-secondary/50;
-  }
-  
-  .faq-item[open] {
-    @apply border-primary/20;
-  }
-  
-  /* Smooth animations */
-  @keyframes slideInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes shimmer {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
-  }
-  
-  @keyframes glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(69, 114, 171, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 30px rgba(69, 114, 171, 0.5);
-    }
-  }
-  
-  .animate-slide-in-up {
-    animation: slideInUp 0.6s ease-out;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
-  }
-  
-  .animate-shimmer {
-    animation: shimmer 2s ease-in-out infinite;
-  }
-  
-  .animate-glow {
-    animation: glow 3s ease-in-out infinite;
-  }
-  
-  /* Decorative gradient text */
-  .gradient-text {
-    background: linear-gradient(
-      135deg,
-      oklch(0.45 0.12 240) 0%,
-      oklch(0.55 0.08 195) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  /* Elevated button styles */
-  .btn-elevated {
-    @apply relative overflow-hidden rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-    background: linear-gradient(
-      135deg,
-      oklch(0.45 0.12 240) 0%,
-      oklch(0.40 0.11 240) 100%
-    );
-  }
-  
-  .btn-elevated::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
-    transition: left 0.5s;
-  }
-  
-  .btn-elevated:hover::before {
-    left: 100%;
-  }
-  
-  /* Decorative SVG dividers */
-  .divider-top {
-    position: relative;
-    margin-top: -1px;
-  }
-  
-  .divider-bottom {
-    position: relative;
-    margin-bottom: -1px;
+
+  .pm-focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
 }

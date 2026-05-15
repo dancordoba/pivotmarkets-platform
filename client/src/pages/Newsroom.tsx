@@ -1,227 +1,171 @@
-import { useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { ArrowRight, Calendar, User } from 'lucide-react';
-import { Breadcrumb } from '@/components/Breadcrumb';
+import { useEffect } from "react";
+import { Link } from "wouter";
+import { CalendarClock, FileText, Megaphone, ShieldCheck } from "lucide-react";
+import { PublicLayout } from "@/components/PublicLayout";
+import { Button } from "@/components/ui/button";
+import { usePageMeta } from "@/lib/pageMeta";
 
-export default function Newsroom() {
+const schemaId = "pivotmarkets-rev2-newsroom-schema";
+
+const futureSections = [
+  {
+    icon: Megaphone,
+    title: "Platform updates",
+    text: "Future official updates about PivotMarkets Rev 2, public site changes, and approved Funding Engine handoff improvements will be published here.",
+  },
+  {
+    icon: FileText,
+    title: "Funding intelligence notes",
+    text: "Approved educational notes may be added later to explain funding strategy concepts without implying funding-fit determinations, qualification outcomes, or award decisions.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Organizational strategy briefs",
+    text: "Future briefs may help leadership teams understand organizational context preparation and responsible funding exploration boundaries.",
+  },
+];
+
+function useNewsroomSchema() {
   useEffect(() => {
-    // Inject NewsArticle schema for Google News
-    const newsSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
-      headline: 'PivotMarkets.ai Launches Sovereign AI Infrastructure for Indiana\'s 2026 IN AI Initiative',
-      description: 'PivotMarkets.ai announces comprehensive sovereign AI infrastructure platform designed to equip Indiana\'s workforce, secure regional data, and drive economic resilience.',
-      image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663058534789/OlpFzXnIRSDbgeuV.png',
-      datePublished: new Date().toISOString(),
-      author: {
-        '@type': 'Organization',
-        name: 'PivotMarkets.ai',
-        url: 'https://pivotmarkets.ai'
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'PivotMarkets.ai',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663058534789/OlpFzXnIRSDbgeuV.png'
-        }
-      },
-      mainEntity: {
-        '@type': 'Organization',
-        name: 'PivotMarkets.ai',
-        description: 'Technical Service Provider aligned with Indiana\'s 2026 IN AI Initiative',
-        url: 'https://pivotmarkets.ai',
-        sameAs: [
-          'https://github.com/pivotmarkets/sovereign-ai',
-          'https://www.cicpindiana.com/',
-          'https://iedc.in.gov/program/in-ai'
-        ]
-      }
-    };
+    document.getElementById(schemaId)?.remove();
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(newsSchema);
+    const schema = [
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "PivotMarkets Newsroom",
+        url: "https://pivotmarkets.ai/newsroom",
+        description:
+          "Official PivotMarkets announcements and approved platform updates will appear here over time.",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "PivotMarkets",
+        url: "https://pivotmarkets.ai",
+        description:
+          "An AI-assisted funding strategy platform that helps organizations prepare structured context before Funding Engine handoff.",
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://pivotmarkets.ai/" },
+          { "@type": "ListItem", position: 2, name: "Newsroom", item: "https://pivotmarkets.ai/newsroom" },
+        ],
+      },
+    ];
+
+    const script = document.createElement("script");
+    script.id = schemaId;
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
-    return () => {
-      document.head.removeChild(script);
-    };
+    return () => document.getElementById(schemaId)?.remove();
   }, []);
+}
 
-  const newsArticles = [
-    {
-      id: 1,
-      title: 'The Nappanee Protocol: Anchoring Indiana\'s Industry in the 2026 Stanford AI Benchmarks',
-      date: 'May 6, 2026',
-      author: 'PivotMarkets Editorial Team',
-      excerpt: 'How sovereign AI infrastructure grounded in peer-reviewed research transforms regional manufacturing through data sovereignty, optimized workflows, and institutional knowledge.',
-      category: 'Sovereign Protocol',
-      link: '/nappanee',
-      featured: true
-    },
-    {
-      id: 0,
-      title: 'PivotMarkets.ai Launches Sovereign AI Infrastructure for Indiana\'s 2026 IN AI Initiative',
-      date: new Date().toLocaleDateString(),
-      author: 'PivotMarkets Editorial Team',
-      excerpt: 'PivotMarkets.ai announces comprehensive sovereign AI infrastructure platform designed to equip Indiana\'s workforce, secure regional data, and drive economic resilience aligned with Secretary David Adams\' IN AI Initiative.',
-      category: 'Press Release',
-      link: '#'
-    },
-    {
-      id: 2,
-      title: 'Dual-Triad Regional Showcases: Connecting Indiana\'s Six Industrial Hubs',
-      date: new Date(Date.now() - 86400000).toLocaleDateString(),
-      author: 'Daniel Cordoba',
-      excerpt: 'Introducing the Maker Triad (Nappanee, Jasper, Warsaw) and Precision Triad (Columbus, Huntington, Batesville) framework for regional sovereign AI deployment and grant stacking.',
-      category: 'Feature',
-      link: '/regional-showcases'
-    },
-    {
-      id: 3,
-      title: 'Million-Dollar Grant Stack: Funding Regional Resilience',
-      date: new Date(Date.now() - 172800000).toLocaleDateString(),
-      author: 'PivotMarkets Editorial Team',
-      excerpt: 'How READI 2.0, Manufacturing Readiness Grants, and Big 3 Cloud Credits combine to reduce R&D costs by up to 80% for Indiana manufacturers.',
-      category: 'Analysis',
-      link: '/nappanee'
-    },
-    {
-      id: 4,
-      title: 'The Nappanee Protocol: Protecting Proprietary Data in Industrial AI',
-      date: new Date(Date.now() - 259200000).toLocaleDateString(),
-      author: 'Daniel Cordoba',
-      excerpt: 'Deep dive into Sovereign RAG architecture and how local data residency prevents global digital extraction while enabling AI innovation.',
-      category: 'Technical',
-      link: '#'
-    }
-  ];
+export default function Newsroom() {
+  usePageMeta(
+    "PivotMarkets Newsroom | Official B2B Platform Updates",
+    "Official PivotMarkets updates for organizational funding strategy, public-site changes, and approved Funding Engine handoff information.",
+  );
+  useNewsroomSchema();
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="container max-w-6xl mx-auto">
-          <div className="flex h-16 items-center justify-between">
-            <div className="font-semibold text-xl tracking-tight">PivotMarkets.ai</div>
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="sm" asChild>
-                <a href="/">Home</a>
-              </Button>
-              <Button size="sm" asChild>
-                <a href="/chamber">Learn More</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Breadcrumb Navigation */}
-      <div className="container max-w-6xl mx-auto px-4 pt-6">
-        <Breadcrumb items={[{ label: "Newsroom", href: "/newsroom" }]} />
-      </div>
-
-      {/* Newsroom Header */}
-      <section className="py-16 md:py-24 bg-slate-50 border-b border-border">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              PivotMarkets Newsroom
+    <PublicLayout>
+      <section className="pm-hero-gradient border-b border-border">
+        <div className="container py-20 md:py-28">
+          <div className="max-w-4xl space-y-7">
+            <p className="pm-eyebrow">Newsroom</p>
+            <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
+              Official PivotMarkets updates will appear here as they are approved.
             </h1>
-            <p className="text-xl text-muted-foreground mb-6">
-              Latest news, press releases, and insights on sovereign AI infrastructure for regional economic resilience.
+            <p className="max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+              This newsroom is an authority placeholder for future announcements, platform updates, and approved public insights. It does not contain fabricated articles, media mentions, social proof, or undocumented funding claims.
             </p>
-            <div className="flex gap-3">
-              <Button asChild>
-                <a href="#contact">Contact Press</a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="/llms.txt">AI Manifest</a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* News Articles */}
-      <section className="py-16 md:py-24">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="space-y-6">
-            {newsArticles.map((article) => (
-              <Card key={article.id} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                  <div className="flex-1 space-y-3">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-semibold">
-                        {article.category}
-                      </span>
-                      <span className="text-sm text-muted-foreground flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {article.date}
-                      </span>
-                    </div>
-                    <h2 className="text-2xl font-bold tracking-tight hover:text-blue-600 transition-colors">
-                      <a href={article.link}>{article.title}</a>
-                    </h2>
-                    <p className="text-muted-foreground">{article.excerpt}</p>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <User className="w-4 h-4" />
-                      {article.author}
-                    </div>
-                  </div>
-                  <Button variant="ghost" size="sm" className="md:self-start" asChild>
-                    <a href={article.link} className="flex items-center gap-2">
-                      Read <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Button>
+      <section className="pm-section bg-background" aria-labelledby="newsroom-purpose-heading">
+        <div className="container">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div>
+              <p className="pm-eyebrow">Decision-maker question</p>
+              <h2 id="newsroom-purpose-heading" className="mt-3 text-3xl md:text-4xl">
+                Where can leadership find official PivotMarkets announcements?
+              </h2>
+              <p className="mt-5 text-base leading-8 text-muted-foreground">
+                Official announcements, approved platform updates, and future public insights will be collected on this page. Until those materials are approved, the page remains intentionally transparent and does not present fictional press coverage or article inventory.
+              </p>
+            </div>
+
+            <article className="pm-card-elevated p-7 md:p-8">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
+                  <CalendarClock className="h-6 w-6" aria-hidden="true" />
                 </div>
-              </Card>
-            ))}
+                <div>
+                  <h3 className="text-2xl font-bold">Authority placeholder only.</h3>
+                  <p className="mt-3 text-base leading-8 text-muted-foreground">
+                    PivotMarkets will use this route for official public material when content has been reviewed and approved. No articles, press mentions, customer outcomes, or funding results are being claimed on this first-release page.
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Google News Optimization */}
-      <section className="py-16 md:py-24 bg-slate-50 border-t border-border">
-        <div className="container max-w-6xl mx-auto px-4">
+      <section className="pm-section pm-section-soft border-y border-border" aria-labelledby="future-content-heading">
+        <div className="container">
           <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">For News Organizations</h2>
-            <p className="text-muted-foreground mb-6">
-              PivotMarkets.ai is registered with Google News Publisher Center. News organizations and journalists can access our latest press releases, high-resolution images, and media kits through our official newsroom.
+            <p className="pm-eyebrow">Future content categories</p>
+            <h2 id="future-content-heading" className="mt-3 text-3xl md:text-4xl">
+              What may be published later.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-muted-foreground">
+              These categories describe future content areas only. They are not placeholders for fabricated posts, media coverage, or unverified social proof.
             </p>
-            <div className="bg-white border border-border rounded-lg p-6 space-y-4">
-              <div>
-                <h3 className="font-semibold mb-2">Press Contact</h3>
-                <p className="text-muted-foreground">press@pivotmarkets.ai</p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">Media Kit</h3>
-                <p className="text-muted-foreground">High-resolution logos, brand guidelines, and company information available upon request.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">RSS Feed</h3>
-                <p className="text-muted-foreground">Subscribe to our news feed at https://pivotmarkets.ai/newsroom/feed</p>
-              </div>
-            </div>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {futureSections.map((section) => {
+              const Icon = section.icon;
+              return (
+                <article key={section.title} className="pm-card p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-secondary text-primary">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold">{section.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">{section.text}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 bg-slate-50">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-center text-sm text-muted-foreground">
-            <p>&copy; 2026 PivotMarkets.ai. All rights reserved.</p>
-            <p className="mt-2">
-              <a href="https://github.com/pivotmarkets/sovereign-ai" className="hover:text-foreground transition-colors">
-                Technical Protocol & Sovereign Schema
-              </a>
-            </p>
+      <section className="border-t border-border bg-primary text-primary-foreground" aria-labelledby="newsroom-cta-heading">
+        <div className="container py-14 md:py-16">
+          <div className="grid gap-7 md:grid-cols-[1fr_auto] md:items-center">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/72">Need current information?</p>
+              <h2 id="newsroom-cta-heading" className="mt-3 text-3xl text-white md:text-4xl">
+                Contact PivotMarkets for approved organizational inquiries.
+              </h2>
+              <p className="mt-4 text-base leading-8 text-white/76">
+                Organizations that need current information can use the contact route rather than relying on unapproved or speculative newsroom content.
+              </p>
+            </div>
+            <Button size="lg" variant="secondary" asChild>
+              <Link href="/contact">Contact PivotMarkets</Link>
+            </Button>
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
+    </PublicLayout>
   );
 }

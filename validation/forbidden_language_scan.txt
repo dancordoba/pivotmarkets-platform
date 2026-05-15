@@ -1,0 +1,38 @@
+client/src/pages/Chamber.tsx:351:                <li><a href="/#incubator" className="hover:text-foreground transition-colors">Middle Manager Incubator</a></li>
+client/src/pages/FundingGateway.tsx:7: * - Interactive funding matrix with searchable incubator directory
+client/src/pages/FundingGateway.tsx:30:  { name: "Y Combinator", location: "San Francisco, CA", focus: "Early-stage tech startups", website: "ycombinator.com", tier: "tier1" },
+client/src/pages/FundingGateway.tsx:37:  { name: "gBETA", location: "Multiple Locations", focus: "Growth-stage startups", website: "gbeta.com", tier: "tier2" },
+client/src/pages/FundingGateway.tsx:39:  { name: "Startup Grind", location: "Multiple Locations", focus: "Founder community", website: "startupgrind.com", tier: "tier2" },
+client/src/pages/FundingGateway.tsx:40:  { name: "1 Million Cups", location: "Multiple Locations", focus: "Local startup community", website: "1millioncups.com", tier: "tier2" },
+client/src/pages/FundingGateway.tsx:41:  { name: "LAUNCH", location: "San Francisco, CA", focus: "Venture-backed startups", website: "launch.co", tier: "tier2" },
+client/src/pages/FundingGateway.tsx:45:  { name: "Startup Bootcamp", location: "Multiple Locations", focus: "Early-stage acceleration", website: "startupbootcamp.org", tier: "tier3" },
+client/src/pages/FundingGateway.tsx:61:  // Filter incubators based on search and tier
+client/src/pages/FundingGateway.tsx:92:            "text": "The National AI Funding & Incubation Gateway is PivotMarkets.ai's comprehensive resource hub connecting startups with Big Three cloud funding (Google, AWS, Azure), top 50 US incubators, and rural AI entrepreneurship programs. We solve the 'funding knowledge gap' by mapping the path of least resistance from founder idea to funded product."
+client/src/pages/FundingGateway.tsx:97:          "name": "How can startups access Google Cloud, AWS, and Azure startup credits without burning personal capital?",
+client/src/pages/FundingGateway.tsx:105:          "name": "Why should incubators partner with PivotMarkets.ai?",
+client/src/pages/FundingGateway.tsx:108:            "text": "PivotMarkets provides your cohorts with ready-made agentic infrastructure templates (Hope Launcher suite), eliminating weeks of DevOps work. Incubators link to us as a resource; we provide your startups with sovereign AI tools to accelerate MVP launch and increase cohort success rates."
+client/src/pages/FundingGateway.tsx:116:            "text": "80% of US counties lack physical tech incubators. PivotMarkets.ai acts as a Digital Incubator providing mentorship, Bangladesh Dev Pod access, and Hope Launcher templates. Rural entrepreneurs bypass geographic limitations and access the same infrastructure advantages as venture-backed founders."
+client/src/pages/FundingGateway.tsx:161:              Connect with Big Three cloud funding, 50+ national incubators, and rural AI entrepreneurship programs. We don't just show you the money—we provide the dev team and marketplace to spend it wisely.
+client/src/pages/FundingGateway.tsx:282:              The "Multi-Cloud Play" is not about vendor lock-in—it's about strategic specialization. Use Google for reasoning complexity, AWS for infrastructure scale, and Azure for enterprise OpenAI integration. This approach gives startups optionality and prevents single-vendor dependency while maximizing each provider's strengths.
+client/src/pages/FundingGateway.tsx:355:            Connect with 50+ top US incubators. Filter by tier, location, or focus area. Each incubator can link to PivotMarkets as a resource for their cohorts.
+client/src/pages/FundingGateway.tsx:397:            {filteredIncubators.map((incubator, idx) => (
+client/src/pages/FundingGateway.tsx:401:                    <h3 className="text-lg font-bold text-slate-900">{incubator.name}</h3>
+client/src/pages/FundingGateway.tsx:402:                    <p className="text-sm text-slate-600">{incubator.location}</p>
+client/src/pages/FundingGateway.tsx:405:                    incubator.tier === "tier1" ? "bg-blue-100 text-blue-800" :
+client/src/pages/FundingGateway.tsx:406:                    incubator.tier === "tier2" ? "bg-purple-100 text-purple-800" :
+client/src/pages/FundingGateway.tsx:409:                    {incubator.tier === "tier1" ? "Flagship" : incubator.tier === "tier2" ? "Regional" : "Specialized"}
+client/src/pages/FundingGateway.tsx:412:                <p className="text-slate-600 mb-4">{incubator.focus}</p>
+client/src/pages/FundingGateway.tsx:414:                  <a href={`https://${incubator.website}`} target="_blank" rel="noopener noreferrer">
+client/src/pages/FundingGateway.tsx:424:              <p className="text-slate-600">No incubators found matching your search. Try adjusting your filters.</p>
+client/src/pages/FundingGateway.tsx:445:            80% of US counties have no physical tech incubator. PivotMarkets.ai acts as the Digital Incubator for rural and remote entrepreneurs, providing mentorship, infrastructure, and tools to bypass geographic limitations.
+client/src/pages/FundingGateway.tsx:519:              Big Three (Google, AWS, Azure): We educate founders on how to maximize your cloud credits and ecosystem adoption. We're not a competitor—we're your power user advocate.
+client/src/pages/FundingGateway.tsx:533:            Start your journey with cloud grants, connect with national incubators, or join the Rural AI Initiative.
+client/src/pages/Jasper.tsx:68:        url: "https://cloud.google.com/startup"
+client/src/pages/Nappanee.tsx:70:        url: "https://cloud.google.com/startup"
+client/src/pages/Newsroom.tsx:18:    text: "Approved educational notes may be added later to explain funding strategy concepts without implying grant matches, eligibility, or award decisions.",
+client/src/pages/Warsaw.tsx:68:        url: "https://cloud.google.com/startup"
+client/src/pages/WorkflowFactory.tsx:129:              <a href="/#incubator" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Incubator</a>
+client/src/pages/ExploreFunding.tsx:205:                    <strong>Boundary note:</strong> Rev 2 does not display eligibility scores, grant matches, truth table logic, risk registers, strategy memos, application drafts, or internal Funding Engine outputs.
+client/src/pages/ExploreFunding.tsx:278:                    <option value="startup">Startup</option>
+client/src/pages/ExploreFunding.tsx:389:              Rev 2 expects operational status only. It does not expose internal scoring, eligibility determinations, truth tables, strategy memos, or application drafts.
+client/src/pages/Terms.tsx:25:    text: "Rev 2 may help prepare context, but it does not display eligibility scores, grant matches, strategy memos, risk registers, application drafts, or Funding Engine internal outputs.",

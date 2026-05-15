@@ -1,0 +1,102 @@
+client/src/components/CryptoPaymentButton.tsx:30:  description: string;
+client/src/components/CryptoPaymentButton.tsx:62:        order_description: description,
+client/src/components/GrantStackProgressBar.tsx:21:    description: string;
+client/src/components/GrantStackProgressBar.tsx:139:            description: `Grant funding opportunities for ${city} businesses`,
+client/src/components/GrantStackProgressBar.tsx:155:              description: program.description,
+client/src/lib/cityAeoSchemas.ts:247:    description: string;
+client/src/pages/Chamber.tsx:105:      description: "We conduct a comprehensive audit of your region's current AI adoption, workforce capabilities, and infrastructure gaps. This assessment identifies opportunities for sovereign AI deployment aligned with your chamber's strategic priorities and Indiana's 2026 IN AI Initiative.",
+client/src/pages/Chamber.tsx:117:      description: "We certify your regional leaders as Logic Architects—professionals trained in agentic governance, Human-in-the-Loop oversight, and regional data sovereignty. This creates an institutional knowledge base that sustains AI adoption across your member organizations.",
+client/src/pages/Chamber.tsx:129:      description: "We deploy grant-ready, practitioner-led AI workflows tailored to your region's industries. From manufacturing readiness to insurance claims automation, each workflow is designed for immediate ROI while maintaining local data residency and Human-in-the-Loop governance.",
+client/src/pages/Chamber.tsx:141:      description: "Your region becomes a Sovereign AI Hub—an economic development engine that attracts talent, retains jobs, and drives productivity growth. This positions your chamber as the institutional authority for AI-driven economic resilience across Indiana.",
+client/src/pages/ComponentShowcase.tsx:199:      description: `Input: ${dialogInput}`,
+client/src/pages/ComponentShowcase.tsx:1325:                          description: "Your changes have been saved",
+client/src/pages/ComponentShowcase.tsx:1335:                          description:
+client/src/pages/ComponentShowcase.tsx:1346:                          description: "This is an information message",
+client/src/pages/ComponentShowcase.tsx:1356:                          description:
+client/src/pages/ComponentShowcase.tsx:1367:                          description: "Please wait",
+client/src/pages/FounderBio.tsx:15:      description: 'Founder and CEO of PivotMarkets.ai, architect of Sovereign AI Infrastructure for regional economic resilience',
+client/src/pages/FounderBio.tsx:65:        description: 'Founder of sovereign AI infrastructure platform'
+client/src/pages/FounderBio.tsx:90:          description: 'Open-source framework for regional AI sovereignty grounded in 2026 Stanford AI Index benchmarks'
+client/src/pages/FounderBio.tsx:96:          description: 'Regional implementation of Sovereign AI infrastructure for artisan manufacturing'
+client/src/pages/Home.tsx:77:        description:
+client/src/pages/Home.tsx:96:        description:
+client/src/pages/Jasper.tsx:42:      description: "Indiana's flagship regional development program supporting infrastructure and workforce development for emerging tech hubs.",
+client/src/pages/Jasper.tsx:48:      description: "Indiana Department of Commerce grant for manufacturers adopting advanced technologies and AI-driven workflows.",
+client/src/pages/Jasper.tsx:55:        description: "Azure credits for cloud infrastructure, AI services, and enterprise applications.",
+client/src/pages/Jasper.tsx:61:        description: "AWS credits for compute, storage, and machine learning services.",
+client/src/pages/Jasper.tsx:67:        description: "Google Cloud credits for data analytics, AI/ML, and infrastructure services.",
+client/src/pages/LogicArchitectCourses.tsx:14:      description: 'Manufacturing-first AI courses designed for shop foremen and office leads in Indiana',
+client/src/pages/LogicArchitectCourses.tsx:23:          description: 'The "Gold Standard" for shop-floor literacy. Contextualizes AI for production environments.',
+client/src/pages/LogicArchitectCourses.tsx:40:          description: 'Critical for AEO. Teaches how to use AI to read complex financial/technical docs.',
+client/src/pages/LogicArchitectCourses.tsx:57:          description: 'Teaches how to build "Agents" that automate workflows without writing code.',
+client/src/pages/LogicArchitectCourses.tsx:74:          description: 'Practical day-to-day efficiency training for office staff managing data.',
+client/src/pages/LogicArchitectCourses.tsx:91:          description: 'Foundational credential from a high-authority global brand.',
+client/src/pages/LogicArchitectCourses.tsx:108:          description: 'Ideal for logistics-heavy hubs to manage risk and forecasting.',
+client/src/pages/LogicArchitectCourses.tsx:137:      description: 'The "Gold Standard" for shop-floor literacy. Contextualizes AI for production environments and is 100% free.',
+client/src/pages/LogicArchitectCourses.tsx:148:      description: 'Critical for AEO. Teaches how to use AI to read complex financial/technical docs—perfect for your "Refinery" model.',
+client/src/pages/LogicArchitectCourses.tsx:159:      description: 'Teaches how to build "Agents" that automate workflows (bidding/estimation) without writing a single line of code.',
+client/src/pages/LogicArchitectCourses.tsx:170:      description: 'Practical "Day-to-Day" efficiency training for the office staff managing the data "Trove."',
+client/src/pages/LogicArchitectCourses.tsx:181:      description: 'Great for "Geeksters" who want a foundational credential from a high-authority global brand.',
+client/src/pages/LogicArchitectCourses.tsx:192:      description: 'Ideal for the logistics-heavy hubs like Columbus or Batesville to manage risk and forecasting.',
+client/src/pages/Nappanee.tsx:44:      description: "Indiana's flagship regional development program supporting infrastructure and workforce development for emerging tech hubs.",
+client/src/pages/Nappanee.tsx:50:      description: "Indiana Department of Commerce grant for manufacturers adopting advanced technologies and AI-driven workflows.",
+client/src/pages/Nappanee.tsx:57:        description: "Azure credits for cloud infrastructure, AI services, and enterprise applications.",
+client/src/pages/Nappanee.tsx:63:        description: "AWS credits for compute, storage, and machine learning services.",
+client/src/pages/Nappanee.tsx:69:        description: "Google Cloud credits for data analytics, AI/ML, and infrastructure services.",
+client/src/pages/Newsroom.tsx:37:        description:
+client/src/pages/Newsroom.tsx:45:        description:
+client/src/pages/PathfinderGateway.tsx:65:                description: "Protect AI ROI. Govern autonomous systems. Scale with sovereignty.",
+client/src/pages/PathfinderGateway.tsx:73:                description: "Build workforce resilience. Connect institutions. Serve your district.",
+client/src/pages/PathfinderGateway.tsx:81:                description: "Learn AI workflows. Build solutions. Create opportunity.",
+client/src/pages/RegionalPartners.tsx:69:      description: "Academic partnership advancing human-centered AI research and Logic Architect certification curriculum.",
+client/src/pages/RegionalPartners.tsx:78:      description: "Technical validation and deployment infrastructure for sovereign data systems in manufacturing environments.",
+client/src/pages/RegionalPartners.tsx:87:      description: "Collaborative alignment on Industry 4.0 manufacturing standards and IoT integration for regional makers.",
+client/src/pages/RegionalShowcases.tsx:50:          description: "Evaluate current craft production workflows, quality control processes, and market reach capabilities."
+client/src/pages/RegionalShowcases.tsx:55:          description: "Validate AI integration readiness for artisan production and quality assurance standards."
+client/src/pages/RegionalShowcases.tsx:60:          description: "Implement AI-powered production tracking and quality management systems."
+client/src/pages/RegionalShowcases.tsx:65:          description: "Establish secure, local data residency for craft business operations and customer relationships."
+client/src/pages/RegionalShowcases.tsx:86:          description: "Assess current furniture production workflows, design processes, and manufacturing capabilities."
+client/src/pages/RegionalShowcases.tsx:91:          description: "Validate AI integration compatibility with furniture production standards and design workflows."
+client/src/pages/RegionalShowcases.tsx:96:          description: "Implement AI-driven production optimization and design-to-manufacture acceleration."
+client/src/pages/RegionalShowcases.tsx:101:          description: "Secure local data residency for manufacturing operations and design intellectual property."
+client/src/pages/RegionalShowcases.tsx:122:          description: "Evaluate medical device development workflows, regulatory compliance processes, and manufacturing capabilities."
+client/src/pages/RegionalShowcases.tsx:127:          description: "Validate AI integration compliance with FDA regulations and medical device standards."
+client/src/pages/RegionalShowcases.tsx:132:          description: "Deploy AI-powered development acceleration and regulatory compliance management."
+client/src/pages/RegionalShowcases.tsx:137:          description: "Establish HIPAA-compliant, local data residency for clinical and regulatory data."
+client/src/pages/RegionalShowcases.tsx:160:          description: "Analyze advanced manufacturing processes, logistics networks, and supply chain capabilities."
+client/src/pages/RegionalShowcases.tsx:165:          description: "Validate AI integration readiness for precision manufacturing and logistics optimization."
+client/src/pages/RegionalShowcases.tsx:170:          description: "Implement AI-powered production optimization and supply chain intelligence."
+client/src/pages/RegionalShowcases.tsx:175:          description: "Secure local data residency for manufacturing operations and supply chain data."
+client/src/pages/RegionalShowcases.tsx:196:          description: "Evaluate precision engineering workflows, quality standards, and compliance requirements."
+client/src/pages/RegionalShowcases.tsx:201:          description: "Validate AI integration compliance with defense contracting standards and security requirements."
+client/src/pages/RegionalShowcases.tsx:206:          description: "Deploy AI-powered quality assurance and secure engineering workflows."
+client/src/pages/RegionalShowcases.tsx:211:          description: "Establish secure, local data residency compliant with defense contracting requirements."
+client/src/pages/RegionalShowcases.tsx:232:          description: "Assess casket manufacturing workflows, logistics processes, and customer service capabilities."
+client/src/pages/RegionalShowcases.tsx:237:          description: "Validate AI integration compatibility with manufacturing standards and logistics workflows."
+client/src/pages/RegionalShowcases.tsx:242:          description: "Implement AI-driven production optimization and logistics acceleration."
+client/src/pages/RegionalShowcases.tsx:247:          description: "Secure local data residency for manufacturing and customer relationship data."
+client/src/pages/Warsaw.tsx:42:      description: "Indiana's flagship regional development program supporting infrastructure and workforce development for emerging tech hubs.",
+client/src/pages/Warsaw.tsx:48:      description: "Indiana Department of Commerce grant for manufacturers adopting advanced technologies and AI-driven workflows.",
+client/src/pages/Warsaw.tsx:55:        description: "Azure credits for cloud infrastructure, AI services, and enterprise applications.",
+client/src/pages/Warsaw.tsx:61:        description: "AWS credits for compute, storage, and machine learning services.",
+client/src/pages/Warsaw.tsx:67:        description: "Google Cloud credits for data analytics, AI/ML, and infrastructure services.",
+client/src/pages/WorkflowFactory.tsx:47:      description: "AI-powered venture audit framework for manufacturing readiness assessment.",
+client/src/pages/WorkflowFactory.tsx:54:      description: "Insurance claim validation and compliance audit system.",
+client/src/pages/WorkflowFactory.tsx:61:      description: "Real-time profit vs. bank balance analysis for construction and trades.",
+client/src/pages/WorkflowFactory.tsx:68:      description: "BLS-integrated labor rate calculator for accurate project bidding.",
+client/src/pages/WorkflowFactory.tsx:78:      description: "Predictive maintenance and asset lifecycle management.",
+client/src/pages/WorkflowFactory.tsx:84:      description: "Authentication and valuation for high-value assets.",
+client/src/pages/WorkflowFactory.tsx:90:      description: "Real-time inventory tracking with OCR verification.",
+client/src/pages/WorkflowFactory.tsx:96:      description: "Regulatory compliance tracking and audit trail management.",
+client/src/pages/WorkflowFactory.tsx:102:      description: "Local data sovereignty and encryption management.",
+client/src/pages/About.tsx:43:        description:
+client/src/pages/About.tsx:51:        description:
+client/src/pages/HowItWorks.tsx:56:        description:
+client/src/pages/HowItWorks.tsx:70:        description:
+client/src/pages/SuccessStory.tsx:59:        description:
+client/src/pages/ExploreFunding.tsx:138:      description: form.fundingNeedDescription,
+client/src/pages/Contact.tsx:26:        description: "Contact PivotMarkets for organizational funding strategy inquiries and questions about the Rev 2 story flow.",
+client/src/pages/Privacy.tsx:45:        description:
+client/src/pages/Terms.tsx:44:        description:
+client/index.html:10:    <meta name="description" content="PivotMarkets helps organizations prepare structured context packages for funding strategy workflow review after explicit handoff consent." />
+client/index.html:24:    <meta name="google-site-verification" content="AcRmKrWl63fWd8Ih3fJ1-oOgtWWqQl7tGFKc2Qw1B_s" />
