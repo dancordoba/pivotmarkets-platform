@@ -202,6 +202,30 @@ function buildPayload(form: FormState) {
   };
 }
 
+function joinNonEmpty(values: Array<string | undefined>) {
+  return values.map((value) => value?.trim()).filter(Boolean).join(", ");
+}
+
+function buildFundingIntakePostBody(form: FormState) {
+  const approvedPayload = buildPayload(form);
+  const primaryGoals = splitList(form.primaryGoals);
+  const projectGoal = joinNonEmpty([
+    primaryGoals.length > 0 ? primaryGoals.join(", ") : undefined,
+    form.fundingNeedDescription,
+  ]);
+
+  return {
+    ...approvedPayload,
+    contactName: form.contactName,
+    contactEmail: form.contactEmail,
+    orgName: form.organizationName,
+    orgLocation: joinNonEmpty([form.city, form.stateRegion, form.country]),
+    entityType: form.organizationType,
+    projectGoal,
+    consentToContact: form.handoffApproved && form.authorizedRepresentative && form.boundaryAcknowledged,
+  };
+}
+
 function useExploreFundingSchema() {
   useEffect(() => {
     document.getElementById(schemaId)?.remove();
@@ -332,7 +356,7 @@ export default function ExploreFunding() {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(buildPayload(form)),
+        body: JSON.stringify(buildFundingIntakePostBody(form)),
       });
       const data = await response.json().catch(() => null) as {
         status?: unknown;

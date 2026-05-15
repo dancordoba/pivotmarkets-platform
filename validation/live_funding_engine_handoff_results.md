@@ -11,3 +11,29 @@ This confirms that the live POST path reaches the Funding Engine through the sam
 
 Endpoint-level validation had already confirmed the same response state through the proxy before browser validation.
 
+
+## Live browser retest after approved field-name mapping
+
+Date: 2026-05-15 EDT
+
+Route: `http://localhost:4180/explore-funding`
+
+Implementation under test: approved submit-only field-name mapping adapter in the POST body construction layer. The visible form fields, consent language, public UI, versioned payload preview, and boundary protection copy were not changed.
+
+Live browser result: **PASS**.
+
+The same validation form values were submitted through the rebuilt local production server and same-origin Funding Engine proxy. The Funding Engine returned the approved response state **`queued`**. The `/explore-funding` UI handled the state correctly and displayed: **“Funding Engine handoff queued.”** The public-safe response message shown was: **“Funding inquiry received and queued for staff review. This appears to be an early-intent submission; no follow-up action is required from you at this time.”**
+
+Conclusion: the seven approved field-name mappings resolved the prior `rejected_invalid_payload` missing-field issue and the live receiver accepted the handoff into an approved processing state.
+
+Mappings validated in the live POST construction layer:
+
+| Rev 2 source field | Receiver field |
+|---|---|
+| `contact.name` | `contactName` |
+| `contact.email` | `contactEmail` |
+| `organization.name` | `orgName` |
+| `organization.geography.country/stateRegion/city` | `orgLocation` |
+| `organization.type` | `entityType` |
+| `goals.primaryGoals` + `fundingNeed.description` | `projectGoal` |
+| Required consent acknowledgements | `consentToContact` |
