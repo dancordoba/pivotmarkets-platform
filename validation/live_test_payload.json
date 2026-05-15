@@ -1,0 +1,38 @@
+{
+  "handoffVersion": "rev2-public-intent-v1",
+  "handoffTimestamp": "2026-05-15T18:00:00.000Z",
+  "sourceRoute": "/explore-funding",
+  "contact": {
+    "name": "PivotMarkets Validation Lead",
+    "email": "validation+rev2@pivotmarkets.ai",
+    "roleTitle": "Release Validation"
+  },
+  "organization": {
+    "name": "PivotMarkets Rev 2 Live Handoff Validation",
+    "type": "B2B operating organization",
+    "industry": "Capital markets infrastructure",
+    "geography": {
+      "country": "United States",
+      "stateRegion": "Validation",
+      "city": "Sandbox"
+    }
+  },
+  "goals": {
+    "primaryGoals": [
+      "Validate live Funding Engine handoff wiring",
+      "Confirm response-state handling"
+    ]
+  },
+  "fundingNeed": {
+    "description": "Live release validation payload submitted through the approved Rev 2 public handoff contract after endpoint wiring."
+  },
+  "timeline": {
+    "decisionWindow": "Release validation window"
+  },
+  "consent": {
+    "handoffApproved": true,
+    "authorizedRepresentative": true,
+    "boundaryAcknowledged": true,
+    "marketingFollowupAllowed": false
+  }
+}

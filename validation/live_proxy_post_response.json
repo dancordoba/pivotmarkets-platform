@@ -1,0 +1,1 @@
+{"state":"rejected_invalid_payload","message":"The payload could not be processed. Please correct the listed errors and resubmit.","timestamp":"2026-05-15T18:00:22.283Z","details":{"missingFields":["contactName","contactEmail","orgName","orgLocation","entityType","projectGoal","consentToContact"],"validationErrors":[]}}

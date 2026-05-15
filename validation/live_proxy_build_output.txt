@@ -1,0 +1,22 @@
+
+> pivotmarkets@1.0.0 build /home/ubuntu/pivotmarkets-platform
+> vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v7.1.9 building for production...
+transforming...
+✓ 1717 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                 368.58 kB │ gzip: 105.90 kB
+../dist/public/assets/index-D7ehmPQ6.css  142.81 kB │ gzip:  22.00 kB
+../dist/public/assets/index-CpX9zcHt.js   550.36 kB │ gzip: 150.61 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.60s
+
+  dist/index.js  44.4kb
+
+⚡ Done in 6ms

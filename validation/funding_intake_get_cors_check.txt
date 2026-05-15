@@ -1,0 +1,9 @@
+HTTP/2 200 
+date: Fri, 15 May 2026 17:56:48 GMT
+content-type: application/json; charset=utf-8
+content-length: 165
+etag: W/"a5-17C4gd5lWIhJW6HwRGpxMn4QJUM"
+x-powered-by: Express
+x-trace-id: 6170774ab6321b089c2d3356455f396b
+
+{"status":"ok","service":"pivotmarkets-funding-2-receiver","version":"1.0.0","acceptedHandoffVersion":"rev2-public-intent-v1","timestamp":"2026-05-15T17:56:48.706Z"}

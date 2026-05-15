@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
-import { AlertTriangle, CheckCircle2, ClipboardCheck, FileJson, RefreshCw, ShieldCheck } from "lucide-react";
+import { AlertTriangle, CheckCircle2, ClipboardCheck, FileJson, RefreshCw, ShieldCheck, Wifi, WifiOff } from "lucide-react";
 import { PublicLayout } from "@/components/PublicLayout";
 import { Button } from "@/components/ui/button";
 import { usePageMeta } from "@/lib/pageMeta";
@@ -12,6 +12,8 @@ type HandoffStatus =
   | "duplicate_or_existing_record"
   | "rejected_invalid_payload"
   | "error";
+
+type ConnectionStatus = "checking" | "online" | "offline";
 
 type FormState = {
   contactName: string;
@@ -52,6 +54,9 @@ const initialFormState: FormState = {
 };
 
 const schemaId = "pivotmarkets-rev2-explore-funding-schema";
+const intakeEndpoint = "/api/funding-intake";
+const healthEndpoint = "/api/funding-intake/health";
+
 
 const requiredFieldLabels: Array<{ key: keyof FormState; label: string }> = [
   { key: "contactName", label: "Contact name" },
@@ -106,6 +111,51 @@ const responseStates: Array<{ status: HandoffStatus; title: string; meaning: str
     uiBehavior: "Show retry and contact fallback while preserving entered data.",
   },
 ];
+
+const responseStateCopy: Record<HandoffStatus, { title: string; message: string }> = {
+  accepted: {
+    title: "Funding Engine handoff accepted.",
+    message: "The Funding Engine received the approved organizational context package and created or linked the appropriate intake record.",
+  },
+  queued: {
+    title: "Funding Engine handoff queued.",
+    message: "The Funding Engine received the approved organizational context package and queued it for asynchronous review.",
+  },
+  needs_more_information: {
+    title: "More information is needed before handoff can proceed.",
+    message: "The required context or acknowledgement fields need attention. Your entered data has been preserved for correction.",
+  },
+  duplicate_or_existing_record: {
+    title: "Existing Funding Engine record located.",
+    message: "The Funding Engine identified an existing organization or session record and returned a public-safe status for follow-up handling.",
+  },
+  rejected_invalid_payload: {
+    title: "Funding Engine rejected the payload contract.",
+    message: "The Funding Engine rejected the handoff because the submitted contract was malformed or contained invalid required fields.",
+  },
+  error: {
+    title: "Funding Engine handoff could not be completed.",
+    message: "The Funding Engine or network connection did not complete the request. Please retry or use the contact path while preserving your entered data.",
+  },
+};
+
+const approvedStatuses: HandoffStatus[] = [
+  "accepted",
+  "queued",
+  "needs_more_information",
+  "duplicate_or_existing_record",
+  "rejected_invalid_payload",
+  "error",
+];
+
+function normalizeHandoffStatus(value: unknown): HandoffStatus {
+  return typeof value === "string" && approvedStatuses.includes(value as HandoffStatus) ? (value as HandoffStatus) : "error";
+}
+
+function extractMissingFields(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => String(item)).filter(Boolean);
+}
 
 function splitList(value: string) {
   return value
@@ -206,7 +256,38 @@ export default function ExploreFunding() {
   );
   const [form, setForm] = useState<FormState>(initialFormState);
   const [submittedStatus, setSubmittedStatus] = useState<HandoffStatus | null>(null);
+  const [responseMessage, setResponseMessage] = useState<string>("");
+  const [responseReference, setResponseReference] = useState<string>("");
   const [missingFields, setMissingFields] = useState<string[]>([]);
+  const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>("checking");
+  const [connectionMessage, setConnectionMessage] = useState("Checking Funding Engine connection…");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const checkConnection = async () => {
+    setConnectionStatus("checking");
+    setConnectionMessage("Checking Funding Engine connection…");
+
+    try {
+      const response = await fetch(healthEndpoint, { method: "GET", headers: { Accept: "application/json" } });
+      const data = await response.json().catch(() => null) as { status?: string; acceptedHandoffVersion?: string } | null;
+
+      if (response.ok && data?.status === "ok" && data.acceptedHandoffVersion === "rev2-public-intent-v1") {
+        setConnectionStatus("online");
+        setConnectionMessage("Funding Engine intake is online and accepting rev2-public-intent-v1 handoffs.");
+        return;
+      }
+
+      setConnectionStatus("offline");
+      setConnectionMessage("Funding Engine intake did not confirm the approved handoff version. Please retry before submitting.");
+    } catch {
+      setConnectionStatus("offline");
+      setConnectionMessage("Funding Engine intake is not reachable from this browser session. Please retry before submitting.");
+    }
+  };
+
+  useEffect(() => {
+    void checkConnection();
+  }, []);
 
   const payloadPreview = useMemo(() => buildPayload(form), [form]);
   const requiredMissing = useMemo(
@@ -228,17 +309,58 @@ export default function ExploreFunding() {
     setForm((current) => ({ ...current, [key]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (requiredMissing.length > 0) {
       setMissingFields(requiredMissing);
+      setResponseReference("");
+      setResponseMessage(responseStateCopy.needs_more_information.message);
       setSubmittedStatus("needs_more_information");
       return;
     }
 
+    setIsSubmitting(true);
     setMissingFields([]);
-    setSubmittedStatus("accepted");
+    setResponseReference("");
+    setResponseMessage("");
+
+    try {
+      const response = await fetch(intakeEndpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(buildPayload(form)),
+      });
+      const data = await response.json().catch(() => null) as {
+        status?: unknown;
+        state?: unknown;
+        responseState?: unknown;
+        message?: unknown;
+        referenceId?: unknown;
+        intakeId?: unknown;
+        missingFields?: unknown;
+        errors?: unknown;
+        details?: { missingFields?: unknown; validationErrors?: unknown };
+      } | null;
+      const nextStatus = normalizeHandoffStatus(data?.status ?? data?.state ?? data?.responseState ?? (!response.ok ? "error" : undefined));
+      const nextMissingFields = extractMissingFields(data?.missingFields ?? data?.details?.missingFields ?? data?.errors ?? data?.details?.validationErrors);
+
+      setSubmittedStatus(nextStatus);
+      setMissingFields(nextStatus === "needs_more_information" || nextStatus === "rejected_invalid_payload" ? nextMissingFields : []);
+      setResponseMessage(typeof data?.message === "string" && data.message.trim().length > 0 ? data.message : responseStateCopy[nextStatus].message);
+      setResponseReference(String(data?.referenceId ?? data?.intakeId ?? ""));
+    } catch {
+      setSubmittedStatus("error");
+      setMissingFields([]);
+      setResponseMessage(responseStateCopy.error.message);
+      setResponseReference("");
+    } finally {
+      setIsSubmitting(false);
+      void checkConnection();
+    }
   };
 
   return (
@@ -301,6 +423,24 @@ export default function ExploreFunding() {
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">
                   Complete the minimum approved fields and consent acknowledgements. Optional details can improve context quality, but the public site remains a handoff layer only.
                 </p>
+                <div className="mt-5 rounded-lg border border-border bg-secondary/55 p-4" role="status" aria-live="polite">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex gap-3">
+                      {connectionStatus === "online" ? (
+                        <Wifi className="mt-1 h-5 w-5 text-[var(--pm-teal)]" aria-hidden="true" />
+                      ) : (
+                        <WifiOff className="mt-1 h-5 w-5 text-[var(--pm-amber)]" aria-hidden="true" />
+                      )}
+                      <div>
+                        <p className="text-sm font-bold">Funding Engine connection: {connectionStatus === "online" ? "Online" : connectionStatus === "checking" ? "Checking" : "Needs retry"}</p>
+                        <p className="mt-1 text-sm leading-6 text-muted-foreground">{connectionMessage}</p>
+                      </div>
+                    </div>
+                    <Button type="button" variant="outline" size="sm" onClick={() => void checkConnection()} disabled={connectionStatus === "checking"}>
+                      Check connection
+                    </Button>
+                  </div>
+                </div>
               </div>
 
               <div className="grid gap-5 md:grid-cols-2">
@@ -392,24 +532,28 @@ export default function ExploreFunding() {
               </div>
 
               {submittedStatus && (
-                <div className="mt-6 rounded-lg border border-border bg-secondary/55 p-5" role="status">
+                <div className="mt-6 rounded-lg border border-border bg-secondary/55 p-5" role="status" aria-live="polite">
                   <div className="flex gap-3">
-                    {submittedStatus === "accepted" ? <CheckCircle2 className="mt-1 h-5 w-5 text-[var(--pm-teal)]" aria-hidden="true" /> : <AlertTriangle className="mt-1 h-5 w-5 text-[var(--pm-amber)]" aria-hidden="true" />}
+                    {submittedStatus === "accepted" || submittedStatus === "queued" || submittedStatus === "duplicate_or_existing_record" ? (
+                      <CheckCircle2 className="mt-1 h-5 w-5 text-[var(--pm-teal)]" aria-hidden="true" />
+                    ) : (
+                      <AlertTriangle className="mt-1 h-5 w-5 text-[var(--pm-amber)]" aria-hidden="true" />
+                    )}
                     <div>
-                      <p className="font-bold">{submittedStatus === "accepted" ? "Handoff payload is ready for the Funding Engine connection." : "More information is required before handoff."}</p>
-                      <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                        {submittedStatus === "accepted"
-                          ? "The approved trigger assembled the versioned payload with required fields and consent. In a connected environment, this is the single point that submits to the Funding Engine."
-                          : `Missing fields: ${missingFields.join(", ")}. Your entered data has been preserved for correction.`}
-                      </p>
+                      <p className="font-bold">{responseStateCopy[submittedStatus].title}</p>
+                      <p className="mt-2 text-sm leading-7 text-muted-foreground">{responseMessage || responseStateCopy[submittedStatus].message}</p>
+                      {responseReference && <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Reference: {responseReference}</p>}
+                      {missingFields.length > 0 && (
+                        <p className="mt-2 text-sm leading-7 text-muted-foreground">Missing or invalid fields: {missingFields.join(", ")}.</p>
+                      )}
                     </div>
                   </div>
                 </div>
               )}
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button type="submit" size="lg">Send Organization Context to Funding Engine</Button>
-                <Button type="button" variant="outline" size="lg" onClick={() => { setForm(initialFormState); setSubmittedStatus(null); setMissingFields([]); }}>
+                <Button type="submit" size="lg" disabled={isSubmitting}>{isSubmitting ? "Sending Organization Context…" : "Send Organization Context to Funding Engine"}</Button>
+                <Button type="button" variant="outline" size="lg" onClick={() => { setForm(initialFormState); setSubmittedStatus(null); setMissingFields([]); setResponseMessage(""); setResponseReference(""); }}>
                   <RefreshCw className="mr-2 h-4 w-4" aria-hidden="true" />
                   Reset Review
                 </Button>

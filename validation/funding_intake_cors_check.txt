@@ -1,0 +1,20 @@
+--- HEALTH OPTIONS ---
+HTTP/2 204 
+date: Fri, 15 May 2026 17:56:10 GMT
+access-control-allow-headers: accept
+access-control-allow-methods: GET,HEAD,PUT,PATCH,POST,DELETE
+access-control-allow-origin: http://localhost:5174
+vary: Origin, Access-Control-Request-Headers
+x-powered-by: Express
+x-trace-id: 61409637b7ce101a0db3349357875ee5
+
+\n--- INTAKE OPTIONS ---
+HTTP/2 204 
+date: Fri, 15 May 2026 17:56:10 GMT
+access-control-allow-headers: content-type,accept
+access-control-allow-methods: GET,HEAD,PUT,PATCH,POST,DELETE
+access-control-allow-origin: http://localhost:5174
+vary: Origin, Access-Control-Request-Headers
+x-powered-by: Express
+x-trace-id: c0979495642e0d55467c8021d3b87a41
+
